@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://davidflynncoutts.com"),
   title: "David Flynn-Coutts | Senior Product Manager",
   description: "Senior Product Manager with 6 years of experience in health tech and telecommunications. Track record of driving revenue growth, streamlining operations and building products people like to use.",
   keywords: ["Product Manager", "Senior Product Manager", "Health Tech", "Telecommunications", "London", "David Flynn-Coutts"],

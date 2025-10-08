@@ -1,10 +1,31 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail } from 'lucide-react'
+import { useEffect, useRef } from 'react'
 
 export function Contact() {
   const typeformUrl = 'https://form.typeform.com/to/nZPxxeiN'
+  const iframeRef = useRef<HTMLIFrameElement>(null)
+
+  useEffect(() => {
+    // Prevent iframe from auto-focusing and scrolling on load
+    const preventScroll = (e: Event) => {
+      e.preventDefault()
+      window.scrollTo(0, 0)
+    }
+
+    window.addEventListener('scroll', preventScroll, { passive: false })
+
+    // Remove listener after a short delay (after iframe loads)
+    const timer = setTimeout(() => {
+      window.removeEventListener('scroll', preventScroll)
+    }, 1000)
+
+    return () => {
+      clearTimeout(timer)
+      window.removeEventListener('scroll', preventScroll)
+    }
+  }, [])
 
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8">
@@ -21,6 +42,7 @@ export function Contact() {
           </p>
           <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 overflow-hidden">
             <iframe
+              ref={iframeRef}
               src={typeformUrl}
               className="w-full h-[600px]"
               frameBorder="0"
