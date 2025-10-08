@@ -1,6 +1,6 @@
 'use client'
 
-import { Linkedin, Menu, X } from 'lucide-react'
+import { Linkedin, Github, Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -17,6 +17,12 @@ export function Navigation() {
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('#')) {
+      // If we're not on the home page, navigate to home page first
+      if (window.location.pathname !== '/') {
+        window.location.href = '/' + href
+        return
+      }
+
       e.preventDefault()
       const element = document.querySelector(href)
       if (element) {
@@ -50,6 +56,15 @@ export function Navigation() {
           </div>
 
           <div className="flex items-center space-x-4">
+            <a
+              href="https://github.com/bandicoutts"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-400 hover:text-zinc-100 transition-colors"
+              aria-label="GitHub"
+            >
+              <Github className="h-5 w-5" />
+            </a>
             <a
               href="https://linkedin.com/in/davidflynncoutts"
               target="_blank"
