@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +14,44 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Product Manager",
-  description: "Product Manager portfolio showcasing work experience, education, and projects.",
+  title: "David Flynn-Coutts | Senior Product Manager",
+  description: "Senior Product Manager with 6 years of experience in health tech and telecommunications. Track record of driving revenue growth, streamlining operations and building products people like to use.",
+  keywords: ["Product Manager", "Senior Product Manager", "Health Tech", "Telecommunications", "London", "David Flynn-Coutts"],
+  authors: [{ name: "David Flynn-Coutts" }],
+  creator: "David Flynn-Coutts",
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    url: "https://davidflynncoutts.com",
+    title: "David Flynn-Coutts | Senior Product Manager",
+    description: "Senior Product Manager with 6 years of experience in health tech and telecommunications. Track record of driving revenue growth, streamlining operations and building products people like to use.",
+    siteName: "David Flynn-Coutts Portfolio",
+    images: [
+      {
+        url: "/headshot.jpeg",
+        width: 400,
+        height: 400,
+        alt: "David Flynn-Coutts",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "David Flynn-Coutts | Senior Product Manager",
+    description: "Senior Product Manager with 6 years of experience in health tech and telecommunications.",
+    images: ["/headshot.jpeg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -28,9 +64,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-        </ThemeProvider>
+        {children}
+        <SpeedInsights />
       </body>
     </html>
   );

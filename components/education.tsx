@@ -1,60 +1,37 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { GraduationCap } from 'lucide-react'
-
-const education = [
-  {
-    degree: 'Master of Business Administration (MBA)',
-    institution: 'Top Business School',
-    period: '2016 - 2018',
-    description: 'Concentration in Technology Management and Entrepreneurship',
-  },
-  {
-    degree: 'Bachelor of Science in Computer Science',
-    institution: 'University Name',
-    period: '2012 - 2016',
-    description: 'Minor in Business Administration, Summa Cum Laude',
-  },
-]
+import { education } from '@/data/education'
 
 export function Education() {
   return (
-    <section id="education" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section id="education" className="py-16 px-4 sm:px-6 lg:px-8 border-t border-zinc-800">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-4xl font-bold mb-12 text-center">Education</h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="border-l border-zinc-800 pl-8 space-y-8">
+            <h2 className="text-sm font-semibold text-zinc-100">Education</h2>
             {education.map((edu, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow"
+                className="relative"
               >
-                <div className="flex items-start gap-4">
-                  <div className="bg-blue-100 dark:bg-blue-900 p-3 rounded-lg">
-                    <GraduationCap className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                <div className="absolute -left-[33px] top-2 w-2 h-2 rounded-full bg-zinc-700" />
+                <div className="space-y-2">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-2">
+                    <h3 className="text-base font-semibold text-zinc-100">{edu.degree}</h3>
+                    <p className="text-sm text-zinc-500">{edu.period}</p>
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-semibold mb-1">{edu.degree}</h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-2">
-                      {edu.institution}
-                    </p>
-                    <p className="text-sm text-gray-500 dark:text-gray-500 mb-2">
-                      {edu.period}
-                    </p>
-                    <p className="text-gray-700 dark:text-gray-300">
-                      {edu.description}
-                    </p>
-                  </div>
+                  <p className="text-sm text-zinc-400">{edu.institution}</p>
+                  {edu.description && <p className="text-sm text-zinc-500 mt-2">{edu.description}</p>}
                 </div>
               </motion.div>
             ))}
