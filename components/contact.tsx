@@ -4,8 +4,7 @@ import { motion } from 'framer-motion'
 import { Mail } from 'lucide-react'
 
 export function Contact() {
-  // Replace this with your actual Typeform URL
-  const typeformUrl = 'https://form.typeform.com/to/YOUR_FORM_ID'
+  const typeformUrl = 'https://form.typeform.com/to/nZPxxeiN'
 
   return (
     <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8">
