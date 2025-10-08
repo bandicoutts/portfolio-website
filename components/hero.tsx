@@ -14,13 +14,13 @@ export function Hero() {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-5xl font-bold mb-4">
-              Hi, I'm <span className="text-blue-600 dark:text-blue-400">Your Name</span>
+              Hi, I&apos;m <span className="text-blue-600 dark:text-blue-400">Your Name</span>
             </h1>
             <h2 className="text-2xl text-gray-600 dark:text-gray-400 mb-6">
               Product Manager
             </h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              I'm a passionate product manager with a track record of delivering
+              I&apos;m a passionate product manager with a track record of delivering
               innovative solutions that drive business growth and enhance user
               experiences. With expertise in product strategy, user research, and
               cross-functional team leadership, I transform complex challenges into

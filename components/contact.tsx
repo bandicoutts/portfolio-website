@@ -17,7 +17,7 @@ export function Contact() {
         >
           <h2 className="text-4xl font-bold mb-4 text-center">Get In Touch</h2>
           <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
-            Interested in working together? Fill out the form below and I'll get back to you as soon as possible.
+            Interested in working together? Fill out the form below and I&apos;ll get back to you as soon as possible.
           </p>
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
             <iframe

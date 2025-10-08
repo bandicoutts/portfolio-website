@@ -21,11 +21,11 @@ const blogPosts: Record<string, {
     content: `
 # Building Better Products Through User Research
 
-User research is the cornerstone of successful product development. By understanding your users' needs, pain points, and behaviors, you can create products that truly resonate with your target audience.
+User research is the cornerstone of successful product development. By understanding your users&apos; needs, pain points, and behaviors, you can create products that truly resonate with your target audience.
 
 ## Why User Research Matters
 
-In today's competitive landscape, assumptions about what users want can be costly. User research provides:
+In today&apos;s competitive landscape, assumptions about what users want can be costly. User research provides:
 
 - **Data-driven insights** into user behavior
 - **Validation** of product ideas before development
@@ -60,7 +60,7 @@ Prioritization is one of the most challenging aspects of product management. Wit
 ## Common Prioritization Frameworks
 
 - **RICE**: Reach, Impact, Confidence, Effort
-- **MoSCoW**: Must have, Should have, Could have, Won't have
+- **MoSCoW**: Must have, Should have, Could have, Won&apos;t have
 - **Value vs. Effort**: Simple 2x2 matrix
 - **Kano Model**: Categorizing features by user satisfaction
 
