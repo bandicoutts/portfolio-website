@@ -2,15 +2,17 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { fadeInUp, defaultTransition } from '@/lib/animations'
 
 export function Hero() {
   return (
     <section id="about" className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto w-full text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          variants={fadeInUp}
+          initial="initial"
+          animate="animate"
+          transition={defaultTransition}
           className="flex flex-col items-center"
         >
           <div className="relative w-32 h-32 rounded-full overflow-hidden border-2 border-zinc-700 mb-6">

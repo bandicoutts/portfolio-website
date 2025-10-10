@@ -2,26 +2,28 @@
 
 import { motion } from 'framer-motion'
 import { experiences } from '@/data/experiences'
+import { fadeInUp, staggerTransition, viewportOnce } from '@/lib/animations'
 
 export function Experience() {
   return (
     <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          variants={fadeInUp}
+          initial="initial"
+          whileInView="animate"
+          viewport={viewportOnce}
         >
           <h2 className="text-2xl font-bold text-zinc-100 mb-12">Work Experience</h2>
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                key={`${exp.company}-${exp.period}`}
+                variants={fadeInUp}
+                initial="initial"
+                whileInView="animate"
+                viewport={viewportOnce}
+                transition={staggerTransition(index)}
                 className="border-l-2 border-zinc-800 pl-6"
               >
                 <div className="space-y-3">

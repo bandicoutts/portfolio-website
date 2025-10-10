@@ -9,6 +9,7 @@ import { use } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { blogPosts } from '@/data/blog-posts'
+import { fadeInUp } from '@/lib/animations'
 
 export default function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params)
@@ -37,9 +38,9 @@ export default function BlogPost({ params }: { params: Promise<{ slug: string }>
       <main className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <article className="max-w-3xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            variants={fadeInUp}
+            initial="initial"
+            animate="animate"
           >
             <Link
               href="/blog"
