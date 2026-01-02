@@ -9,6 +9,24 @@
   --border: #2a2a2a;
   --accent: #f97316;
   --accent-muted: #ea580c;
+
+  /* Typography Scale */
+  --text-xs: 0.75rem;
+  /* 12px - metadata, timestamps */
+  --text-sm: 0.875rem;
+  /* 14px - secondary info */
+  --text-base: 1rem;
+  /* 16px - body text */
+  --text-lg: 1.125rem;
+  /* 18px - emphasized body */
+  --text-xl: 1.25rem;
+  /* 20px - subheadings */
+  --text-2xl: 1.5rem;
+  /* 24px - section headings */
+  --text-4xl: 2.25rem;
+  /* 36px - page headings */
+  --text-6xl: 3.75rem;
+  /* 60px - hero headline */
 }
 
 @theme inline {

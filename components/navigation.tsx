@@ -36,8 +36,8 @@ export function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-zinc-950/90 backdrop-blur supports-[backdrop-filter]:bg-zinc-950/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-lg font-semibold text-zinc-100 hover:text-white transition-colors">
+        <div className="flex justify-between items-center h-14">
+          <Link href="/" className="text-base font-semibold text-zinc-100 hover:text-white transition-colors">
             David Flynn-Coutts
           </Link>
 
@@ -48,9 +48,10 @@ export function Navigation() {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => scrollToSection(e, item.href)}
-                className="px-3 py-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors rounded-md hover:bg-zinc-800/50"
+                className="relative px-3 py-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors group"
               >
                 {item.name}
+                <span className="absolute bottom-1.5 left-3 right-3 h-px bg-zinc-100 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
               </Link>
             ))}
           </div>
