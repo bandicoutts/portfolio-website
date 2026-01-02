@@ -15,12 +15,13 @@ export function Hero() {
           transition={defaultTransition}
           className="flex flex-col sm:flex-row gap-8 sm:gap-12 items-start"
         >
-          <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-lg overflow-hidden flex-shrink-0">
+          <div className="relative w-32 sm:w-40 self-stretch rounded-lg overflow-hidden flex-shrink-0">
             <Image
-              src="/headshot.jpeg"
+              src="/7819-0750.jpg"
               alt="David Flynn-Coutts"
               fill
               className="object-cover"
+              style={{ objectPosition: '60% 40%' }}
               priority
             />
           </div>
