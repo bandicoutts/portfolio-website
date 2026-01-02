@@ -41,49 +41,56 @@ export function Navigation() {
             David Flynn-Coutts
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={(e) => scrollToSection(e, item.href)}
-                className="relative px-3 py-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors group"
+          {/* Consolidated Navigation + Social */}
+          <div className="flex items-center gap-6">
+            {/* Desktop Navigation Links */}
+            <div className="hidden md:flex items-center space-x-1">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={(e) => scrollToSection(e, item.href)}
+                  className="relative px-3 py-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors group"
+                >
+                  {item.name}
+                  <span className="absolute bottom-1.5 left-3 right-3 h-px bg-zinc-100 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
+                </Link>
+              ))}
+            </div>
+
+            {/* Subtle Divider */}
+            <div className="hidden md:block h-5 w-px bg-zinc-700"></div>
+
+            {/* Social Icons + Mobile Menu */}
+            <div className="flex items-center space-x-3">
+              <a
+                href="https://github.com/bandicoutts"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-400 hover:text-zinc-100 transition-colors"
+                aria-label="GitHub"
               >
-                {item.name}
-                <span className="absolute bottom-1.5 left-3 right-3 h-px bg-zinc-100 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
-              </Link>
-            ))}
-          </div>
+                <Github className="h-5 w-5" />
+              </a>
+              <a
+                href="https://linkedin.com/in/davidflynncoutts"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-400 hover:text-zinc-100 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
 
-          <div className="flex items-center space-x-4">
-            <a
-              href="https://github.com/bandicoutts"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-400 hover:text-zinc-100 transition-colors"
-              aria-label="GitHub"
-            >
-              <Github className="h-5 w-5" />
-            </a>
-            <a
-              href="https://linkedin.com/in/davidflynncoutts"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-400 hover:text-zinc-100 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="h-5 w-5" />
-            </a>
-
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden text-zinc-400 hover:text-zinc-100 transition-colors"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
+              {/* Mobile menu button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden text-zinc-400 hover:text-zinc-100 transition-colors"
+                aria-label="Toggle menu"
+              >
+                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
