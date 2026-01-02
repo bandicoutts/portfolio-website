@@ -35,7 +35,7 @@ export function Contact() {
           whileInView="animate"
           viewport={viewportOnce}
         >
-          <h2 className="text-2xl font-bold text-zinc-100 mb-6">Let's talk</h2>
+          <h2 className="text-2xl font-bold text-zinc-100 mb-6">Let&apos;s talk</h2>
           <p className="text-base text-zinc-400 leading-relaxed mb-8">
             Interested in working together? Fill out the form below.
           </p>
