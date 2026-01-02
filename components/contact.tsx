@@ -37,8 +37,33 @@ export function Contact() {
         >
           <h2 className="text-2xl font-bold text-zinc-100 mb-6">Let&apos;s talk</h2>
           <p className="text-base text-zinc-400 leading-relaxed mb-8">
-            Interested in working together? Fill out the form below.
+            Interested in working together? Send me an email or fill out the form below.
           </p>
+
+          {/* Email Contact */}
+          <div className="mb-8">
+            <a
+              href="mailto:d.coutts@gmail.com"
+              className="inline-flex items-center gap-2 text-lg font-medium text-accent hover:text-accent-muted transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded px-1"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+              Email me
+            </a>
+          </div>
+
           <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 overflow-hidden">
             {isIframeLoaded ? (
               <iframe
