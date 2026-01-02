@@ -3,6 +3,7 @@ export interface Experience {
   company: string
   period: string
   location: string
+  metrics?: { label: string; value: string }[]
   description: string[]
 }
 

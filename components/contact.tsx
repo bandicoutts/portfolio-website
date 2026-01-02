@@ -27,7 +27,7 @@ export function Contact() {
   }, [isIframeLoaded])
 
   return (
-    <section ref={sectionRef} id="contact" className="py-24 px-4 sm:px-6 lg:px-8">
+    <section ref={sectionRef} id="contact" className="py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <motion.div
           variants={fadeInUp}
@@ -35,9 +35,9 @@ export function Contact() {
           whileInView="animate"
           viewport={viewportOnce}
         >
-          <h2 className="text-2xl font-bold text-zinc-100 mb-6">Get in touch</h2>
+          <h2 className="text-2xl font-bold text-zinc-100 mb-6">Let's talk</h2>
           <p className="text-base text-zinc-400 leading-relaxed mb-8">
-            Interested in working together? Fill out the form below and I&apos;ll get back to you as soon as possible.
+            Interested in working together? Fill out the form below.
           </p>
           <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 overflow-hidden">
             {isIframeLoaded ? (
