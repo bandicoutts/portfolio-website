@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: "David Flynn-Coutts Portfolio",
     images: [
       {
-        url: "/headshot.jpeg",
+        url: "/7819-0750.jpg",
         width: 400,
         height: 400,
         alt: "David Flynn-Coutts",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "David Flynn-Coutts | Senior Product Manager",
     description:
       "Senior Product Manager with 6 years of experience in health tech and telecommunications.",
-    images: ["/headshot.jpeg"],
+    images: ["/7819-0750.jpg"],
   },
   robots: {
     index: true,

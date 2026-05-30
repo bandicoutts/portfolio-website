@@ -116,7 +116,7 @@ export function Contact() {
             </p>
             <div className="contact__card">
               <Image
-                src="/headshot.jpeg"
+                src="/7819-0750.jpg"
                 alt="David Flynn-Coutts"
                 width={56}
                 height={56}

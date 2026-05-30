@@ -19,7 +19,7 @@ export function Hero() {
             <span className="eyebrow">Senior Product Manager · London</span>
             <div className="hero__name">
               <Image
-                src="/headshot.jpeg"
+                src="/7819-0750.jpg"
                 alt="David Flynn-Coutts"
                 width={40}
                 height={40}
@@ -51,7 +51,7 @@ export function Hero() {
           <div className="hero__photo">
             <div className="ring" />
             <Image
-              src="/headshot.jpeg"
+              src="/7819-0750.jpg"
               alt="David Flynn-Coutts"
               width={300}
               height={360}
