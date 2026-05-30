@@ -55,7 +55,8 @@ export function Hero() {
               alt="David Flynn-Coutts"
               width={300}
               height={360}
-              style={{ objectFit: 'cover', borderRadius: '28px' }}
+              quality={90}
+              style={{ objectFit: 'cover', objectPosition: 'center top', borderRadius: '28px' }}
               priority
             />
             <div className="tag">
