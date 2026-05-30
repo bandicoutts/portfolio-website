@@ -1,7 +1,14 @@
 'use client'
 
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import { ArrowUpRight, Sparkles } from 'lucide-react'
+import { EASE } from '@/components/motion-primitives'
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 22 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
+}
 
 function StayrightCard() {
   return (
@@ -96,17 +103,49 @@ export function Portfolio() {
   return (
     <section className="section" id="work">
       <div className="wrap">
-        <span className="eyebrow">Projects</span>
-        <h2 className="t-h1" style={{ marginTop: 16, marginBottom: 8 }}>
+        <motion.span
+          className="eyebrow"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.5, ease: EASE }}
+        >
+          Projects
+        </motion.span>
+        <motion.h2
+          className="t-h1"
+          style={{ marginTop: 16, marginBottom: 8 }}
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6, ease: EASE, delay: 0.08 }}
+        >
           Things I&apos;ve built.
-        </h2>
-        <p className="t-lead" style={{ maxWidth: 520, margin: 0 }}>
-          Two projects, built for different reasons. Both shipped.
-        </p>
-        <div className="work">
-          <StayrightCard />
-          <ParityCard />
-        </div>
+        </motion.h2>
+        <motion.p
+          className="t-lead"
+          style={{ maxWidth: 520, margin: 0 }}
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.55, ease: EASE, delay: 0.14 }}
+        >
+          One for a real problem. One for fun.
+        </motion.p>
+        <motion.div
+          className="work"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-40px' }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.15 } } }}
+        >
+          <motion.div variants={cardVariants}>
+            <StayrightCard />
+          </motion.div>
+          <motion.div variants={cardVariants}>
+            <ParityCard />
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )

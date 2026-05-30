@@ -342,6 +342,7 @@ textarea:focus-visible {
   cursor: pointer;
 }
 .nav__links a:hover { color: var(--fg); }
+.nav__links a.is-active { color: var(--fg); }
 .nav__div { width: 1px; height: 20px; background: var(--border); }
 .iconbtn {
   width: 36px;
@@ -375,16 +376,7 @@ textarea:focus-visible {
 /* ============================================================
    HERO
    ============================================================ */
-.hero { padding: 56px 0 92px; position: relative; overflow: hidden; }
-.hero__glow {
-  position: absolute;
-  top: -180px;
-  right: -120px;
-  width: 520px;
-  height: 520px;
-  background: radial-gradient(circle, var(--accent-tint), transparent 68%);
-  pointer-events: none;
-}
+.hero { padding: 56px 0 64px; }
 .hero__grid {
   display: grid;
   grid-template-columns: 1.35fr 0.9fr;
@@ -392,21 +384,6 @@ textarea:focus-visible {
   align-items: center;
   position: relative;
 }
-.hero__name {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 22px 0 18px;
-}
-.hero__name img {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-full);
-  object-fit: cover;
-  border: 1px solid var(--border-strong);
-}
-.hero__name span { font-size: 15px; color: var(--fg-muted); }
-.hero__name b { color: var(--fg); font-weight: 600; }
 .hero h1 {
   font-family: var(--font-display);
   font-weight: 700;

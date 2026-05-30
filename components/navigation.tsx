@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { Sun, Moon, Menu, X } from 'lucide-react'
 
@@ -38,7 +38,26 @@ function prefersReducedMotion() {
 
 export function Navigation() {
   const [open, setOpen] = useState(false)
+  const [activeId, setActiveId] = useState<string>('')
   const { resolvedTheme, setTheme } = useTheme()
+
+  useEffect(() => {
+    const ids = links.map(l => l.id)
+    const observers: IntersectionObserver[] = []
+
+    ids.forEach(id => {
+      const el = document.getElementById(id)
+      if (!el) return
+      const observer = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setActiveId(id) },
+        { rootMargin: '-64px 0px -55% 0px', threshold: 0 }
+      )
+      observer.observe(el)
+      observers.push(observer)
+    })
+
+    return () => observers.forEach(o => o.disconnect())
+  }, [])
 
   const go = (id: string) => {
     setOpen(false)
@@ -56,7 +75,7 @@ export function Navigation() {
         <div className="nav__right">
           <div className="nav__links">
             {links.map(({ label, id }) => (
-              <a key={id} onClick={() => go(id)}>{label}</a>
+              <a key={id} onClick={() => go(id)} className={activeId === id ? 'is-active' : ''}>{label}</a>
             ))}
           </div>
           <button className="iconbtn" onClick={toggleTheme} aria-label="Toggle colour theme">

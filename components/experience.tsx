@@ -1,5 +1,19 @@
+'use client'
+
+import { motion } from 'framer-motion'
 import { experiences } from '@/data/experiences'
 import type { ExperiencePoint } from '@/types'
+import { EASE } from '@/components/motion-primitives'
+
+const xpContainer = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
+}
+
+const xpItem = {
+  hidden: { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE } },
+}
 
 function Point({ parts }: { parts: ExperiencePoint }) {
   return (
@@ -19,13 +33,38 @@ export function Experience() {
   return (
     <section className="section section--subtle" id="experience">
       <div className="wrap">
-        <span className="eyebrow">Experience</span>
-        <h2 className="t-h1" style={{ marginTop: 16, marginBottom: 0 }}>
+        <motion.span
+          className="eyebrow"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.5, ease: EASE }}
+        >
+          Experience
+        </motion.span>
+        <motion.h2
+          className="t-h1"
+          style={{ marginTop: 16, marginBottom: 0 }}
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6, ease: EASE, delay: 0.08 }}
+        >
           Where I&apos;ve moved the numbers.
-        </h2>
-        <div className="xp">
+        </motion.h2>
+        <motion.div
+          className="xp"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-40px' }}
+          variants={xpContainer}
+        >
           {experiences.map((x, i) => (
-            <div key={i} className={'xp__item' + (x.current ? ' is-current' : '')}>
+            <motion.div
+              key={i}
+              variants={xpItem}
+              className={'xp__item' + (x.current ? ' is-current' : '')}
+            >
               <div className="xp__head">
                 <div>
                   <div className="xp__role">
@@ -42,9 +81,9 @@ export function Experience() {
                   ))}
                 </ul>
               )}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )
