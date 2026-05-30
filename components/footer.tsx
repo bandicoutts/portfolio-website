@@ -26,8 +26,9 @@ export function Footer() {
           </div>
           <div className="footer__col">
             <h5>Site</h5>
-            <a onClick={() => scrollTo('work')}>Projects</a>
             <a onClick={() => scrollTo('experience')}>Experience</a>
+            <a onClick={() => scrollTo('work')}>Projects</a>
+            <a onClick={() => scrollTo('education')}>Education</a>
             <a onClick={() => scrollTo('contact')}>Contact</a>
           </div>
           <div className="footer__col">
