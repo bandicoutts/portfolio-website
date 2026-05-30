@@ -29,11 +29,11 @@ export function Hero() {
               <span><b>David Flynn-Coutts</b> — health tech &amp; telco</span>
             </div>
             <h1>
-              Most PMs can describe a great product. <em>Fewer can build one.</em>
+              PM by role. <em>Builder by habit.</em>
             </h1>
             <p className="hero__lead">
-              Six years shipping NHS integrations, clinical workflows, and telco billing systems.
-              I read the API docs and sit with the users. A PM who ships the thing, not just the PRD.
+              Eight years in NHS health tech and telco. I&apos;ve shipped clinical integrations,
+              fixed broken billing, and built two products in my own time.
             </p>
             <div className="hero__cta">
               <button className="btn btn--primary" onClick={() => scrollTo('contact')}>
