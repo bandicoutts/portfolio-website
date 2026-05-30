@@ -96,9 +96,9 @@ export function Portfolio() {
   return (
     <section className="section" id="work">
       <div className="wrap">
-        <span className="eyebrow">Selected work</span>
+        <span className="eyebrow">Projects</span>
         <h2 className="t-h1" style={{ marginTop: 16, marginBottom: 8 }}>
-          Things I&apos;ve actually built.
+          Things I&apos;ve built.
         </h2>
         <p className="t-lead" style={{ maxWidth: 520, margin: 0 }}>
           Two projects, built for different reasons. Both shipped.
