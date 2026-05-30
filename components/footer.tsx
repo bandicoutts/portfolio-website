@@ -16,7 +16,7 @@ export function Footer() {
               David Flynn-Coutts<span className="dot">.</span>
             </span>
             <p>
-              Senior Product Manager building products people rely on — across health tech, telco,
+              Senior Product Manager building products people rely on across health tech, telco,
               and a couple of things of my own.
             </p>
             <div className="footer__avail">

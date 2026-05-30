@@ -33,7 +33,7 @@ export function Hero() {
             </h1>
             <p className="hero__lead">
               Eight years in NHS health tech and telco. I&apos;ve shipped clinical integrations,
-              fixed broken billing, and built two products in my own time.
+              fixed broken billing, and built some things in my own time.
             </p>
             <div className="hero__cta">
               <button className="btn btn--primary" onClick={() => scrollTo('contact')}>
