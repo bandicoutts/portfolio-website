@@ -816,17 +816,17 @@ textarea:focus-visible {
 .contact__grid {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
-  gap: 56px;
+  grid-template-areas:
+    "lead form"
+    "profile form";
+  column-gap: 56px;
+  row-gap: 0;
   margin-top: 40px;
   align-items: start;
 }
-.contact__lead {
-  font-size: 17px;
-  line-height: 1.6;
-  color: var(--fg-muted);
-  margin: 16px 0 28px;
-  max-width: 360px;
-}
+.contact__lead    { grid-area: lead; font-size: 17px; line-height: 1.6; color: var(--fg-muted); margin: 0 0 28px; max-width: 360px; }
+.contact__profile { grid-area: profile; }
+.contact__form-wrap { grid-area: form; }
 .contact__card {
   display: flex;
   align-items: center;
@@ -1004,13 +1004,34 @@ textarea:focus-visible {
   .hero__photo .tag { left: 12px; right: auto; }
   .sr, .pr { grid-template-columns: 1fr; gap: 28px; padding: 28px; }
   .sr__title, .pr__title { font-size: 28px; }
-  .contact__grid { grid-template-columns: 1fr; gap: 36px; }
-  .form__row { flex-direction: column; gap: 0; }
   .tiles { grid-template-columns: repeat(3, 1fr); }
   .tile { width: 100%; }
   .xp__when { white-space: normal; }
 }
 
+/* Tablet: contact reflows — lead + profile top row, form full-width below */
+@media (min-width: 561px) and (max-width: 860px) {
+  .contact__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "lead profile"
+      "form form";
+    column-gap: 40px;
+    row-gap: 36px;
+  }
+  .contact__lead { max-width: none; margin-bottom: 0; }
+}
+
 @media (max-width: 560px) {
   .footer__grid { grid-template-columns: 1fr; gap: 28px; }
+  .contact__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "lead"
+      "profile"
+      "form";
+    row-gap: 28px;
+  }
+  .contact__lead { margin-bottom: 0; }
+  .form__row { flex-direction: column; gap: 0; }
 }

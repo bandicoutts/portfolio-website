@@ -116,11 +116,11 @@ export function Contact() {
           Hiring, building, or just curious?
         </h2>
         <div className="contact__grid">
-          <div>
-            <p className="contact__lead">
-              I&apos;m open to Senior PM roles and select freelance work. Tell me what you&apos;re
-              working on.
-            </p>
+          <p className="contact__lead">
+            I&apos;m open to Senior PM roles and select freelance work. Tell me what you&apos;re
+            working on.
+          </p>
+          <div className="contact__profile">
             <div className="contact__card">
               <Image
                 src="/7819-0750.jpg"
@@ -145,7 +145,9 @@ export function Contact() {
               </a>
             </div>
           </div>
-          <ContactForm />
+          <div className="contact__form-wrap">
+            <ContactForm />
+          </div>
         </div>
       </div>
     </section>
