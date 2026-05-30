@@ -1,20 +1,31 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({
-  variable: "--font-inter",
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://davidflynncoutts.com"),
   title: "David Flynn-Coutts | Senior Product Manager",
-  description: "Senior Product Manager with 6 years of experience in health tech and telecommunications. Track record of driving revenue growth, streamlining operations and building products people like to use.",
-  keywords: ["Product Manager", "Senior Product Manager", "Health Tech", "Telecommunications", "London", "David Flynn-Coutts"],
+  description:
+    "Senior Product Manager with 6 years of experience in health tech and telecommunications. Track record of driving revenue growth, streamlining operations and building products people like to use.",
+  keywords: [
+    "Product Manager",
+    "Senior Product Manager",
+    "Health Tech",
+    "Telecommunications",
+    "London",
+    "David Flynn-Coutts",
+  ],
   authors: [{ name: "David Flynn-Coutts" }],
   creator: "David Flynn-Coutts",
   openGraph: {
@@ -22,7 +33,8 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: "https://davidflynncoutts.com",
     title: "David Flynn-Coutts | Senior Product Manager",
-    description: "Senior Product Manager with 6 years of experience in health tech and telecommunications. Track record of driving revenue growth, streamlining operations and building products people like to use.",
+    description:
+      "Senior Product Manager with 6 years of experience in health tech and telecommunications. Track record of driving revenue growth, streamlining operations and building products people like to use.",
     siteName: "David Flynn-Coutts Portfolio",
     images: [
       {
@@ -36,7 +48,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "David Flynn-Coutts | Senior Product Manager",
-    description: "Senior Product Manager with 6 years of experience in health tech and telecommunications.",
+    description:
+      "Senior Product Manager with 6 years of experience in health tech and telecommunications.",
     images: ["/headshot.jpeg"],
   },
   robots: {
@@ -58,12 +71,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} antialiased`}
-        suppressHydrationWarning
-      >
-        {children}
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${bricolage.variable} ${GeistSans.variable} ${GeistMono.variable}`}
+    >
+      <body suppressHydrationWarning>
+        <ThemeProvider attribute="data-theme" defaultTheme="dark" disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
         <SpeedInsights />
       </body>
     </html>

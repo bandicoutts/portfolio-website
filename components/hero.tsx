@@ -1,46 +1,70 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { fadeInUp, defaultTransition } from '@/lib/animations'
+import { ArrowRight, Download, MapPin } from 'lucide-react'
+
+function scrollTo(id: string) {
+  const el = document.getElementById(id)
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  if (el) el.scrollIntoView({ behavior: reduced ? 'instant' : 'smooth' })
+}
 
 export function Hero() {
   return (
-    <section id="about" className="pt-32 lg:pt-40 pb-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto w-full">
-        <motion.div
-          variants={fadeInUp}
-          initial="initial"
-          animate="animate"
-          transition={defaultTransition}
-          className="flex flex-col sm:flex-row gap-8 sm:gap-12 items-start"
-        >
-          <div className="relative w-32 sm:w-40 self-stretch rounded-lg overflow-hidden flex-shrink-0">
+    <header className="hero" id="top">
+      <div className="hero__glow" />
+      <div className="wrap">
+        <div className="hero__grid">
+          <div>
+            <span className="eyebrow">Senior Product Manager · London</span>
+            <div className="hero__name">
+              <Image
+                src="/headshot.jpeg"
+                alt="David Flynn-Coutts"
+                width={40}
+                height={40}
+                style={{ borderRadius: '999px', objectFit: 'cover' }}
+                priority
+              />
+              <span><b>David Flynn-Coutts</b> — health tech &amp; telco</span>
+            </div>
+            <h1>
+              Most PMs can describe a great product. <em>Fewer can build one.</em>
+            </h1>
+            <p className="hero__lead">
+              Six years across health tech and telco — revenue growth, operational efficiency,
+              user-centred execution. A PM who ships the thing, not just the PRD.
+            </p>
+            <div className="hero__cta">
+              <button className="btn btn--primary" onClick={() => scrollTo('contact')}>
+                Let&apos;s talk <ArrowRight size={16} strokeWidth={1.75} />
+              </button>
+              <a className="btn btn--secondary" href="/DavidFlynnCoutts_Resume_May2025.pdf" download>
+                <Download size={16} strokeWidth={1.75} /> Download CV
+              </a>
+            </div>
+            <div className="hero__avail">
+              <span className="pulse" />
+              Open to Senior PM roles &amp; freelance
+            </div>
+          </div>
+          <div className="hero__photo">
+            <div className="ring" />
             <Image
-              src="/7819-0750.jpg"
+              src="/headshot.jpeg"
               alt="David Flynn-Coutts"
-              fill
-              className="object-cover"
-              style={{ objectPosition: '60% 40%' }}
+              width={300}
+              height={360}
+              style={{ objectFit: 'cover', borderRadius: '28px' }}
               priority
             />
+            <div className="tag">
+              <MapPin size={14} strokeWidth={1.75} />
+              London · <b>builds &amp; ships</b>
+            </div>
           </div>
-
-          <div className="flex flex-col flex-1">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-100 mb-6">
-              David Flynn-Coutts
-            </h1>
-
-            <p className="text-2xl sm:text-3xl font-light text-zinc-400 mb-8">
-              Senior Product Manager
-            </p>
-
-            <p className="text-lg text-zinc-400 leading-relaxed max-w-2xl">
-              Six years building health tech and telco products. Track record: revenue growth, operational efficiency, user-centered execution.
-            </p>
-          </div>
-        </motion.div>
+        </div>
       </div>
-    </section>
+    </header>
   )
 }

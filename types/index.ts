@@ -1,10 +1,13 @@
+/** Each point is an alternating array: even indices = plain text, odd indices = inline figures */
+export type ExperiencePoint = string[]
+
 export interface Experience {
-  title: string
-  company: string
-  period: string
-  location: string
-  metrics?: { label: string; value: string }[]
-  description: string[]
+  role: string
+  org: string
+  when: string
+  where: string
+  current?: boolean
+  points: ExperiencePoint[]
 }
 
 export interface Education {

@@ -1,52 +1,37 @@
-import { Experience } from '@/types'
+import type { Experience } from '@/types'
 
 export const experiences: Experience[] = [
   {
-    title: 'Senior Product Manager',
-    company: 'Consultant Connect',
-    period: 'August 2021 - Present',
-    location: 'London, UK',
-    metrics: [
-      { label: 'Clinician Growth', value: '+75%' },
-      { label: 'Revenue Retention', value: '£2M' },
-      { label: 'NPS Improvement', value: '+26 pts' },
-    ],
-    description: [
-      'Led Scotland-wide digital dermatology product, scaling active users from 4,000 to 7,000 clinicians while retaining £2M in at-risk NHS contracts and driving 20% revenue growth',
-      'Shipped eRS Connect integration, reducing consultant handling time per referral from 6 minutes to 1.5 minutes by consolidating multi-screen workflows into a single interface',
-      'Established closed-loop feedback system across support channels, shifting from reactive handling to structured problem-solving and improving Primary Care NPS from +4 to +30',
-      'Leading core platform rebuild to eliminate technical debt, duplicate data entry, and fragmented workflows affecting clinician time-on-task',
+    role: 'Senior Product Manager',
+    org: 'Consultant Connect',
+    when: 'Aug 2021 — Present',
+    where: 'London, UK',
+    current: true,
+    points: [
+      ['Led a Scotland-wide digital dermatology product, scaling active users from ', '4,000', ' to ', '7,000', ' clinicians while retaining ', '£2M', ' in at-risk NHS contracts.'],
+      ['Shipped the eRS Connect integration, cutting consultant handling time per referral from ', '6 min', ' to ', '1.5 min', ' by consolidating multi-screen workflows into one interface.'],
+      ['Built a closed-loop feedback system across support channels, lifting Primary Care NPS from +4 to ', '+30', '.'],
+      ['Leading core platform rebuild to eliminate technical debt and fragmented workflows.'],
     ],
   },
   {
-    title: 'Product Manager',
-    company: 'Vodafone New Zealand',
-    period: 'January 2020 - August 2021',
-    location: 'Auckland, New Zealand',
-    metrics: [
-      { label: 'Revenue Recovery', value: '$700K' },
-      { label: 'ROI', value: '58×' },
-      { label: 'Connections (Month 1)', value: '1,000' },
-    ],
-    description: [
-      'Identified systemic billing revenue leakage through data analysis, correcting 1,500 undercharged accounts and recovering $700k within three months at $12k delivery cost (58× ROI)',
-      'Launched Business Wireless Broadband product, achieving 1,000 connections in first month with sustained 25% month-on-month growth for six months',
-      'Designed repeatable billing integrity process combining configuration analysis, propensity scoring, and coordinated outreach',
+    role: 'Product Manager',
+    org: 'Vodafone New Zealand',
+    when: 'Jan 2020 — Aug 2021',
+    where: 'Auckland, NZ',
+    points: [
+      ['Found systemic billing revenue leakage, corrected ', '1,500', ' undercharged accounts, recovered ', '$700K', ' in three months at $12K cost — a ', '58×', ' return.'],
+      ['Launched Business Wireless Broadband to ', '1,000', ' connections in month one, sustaining ', '25%', ' MoM growth for six months.'],
     ],
   },
   {
-    title: 'Product & Propositions Manager',
-    company: 'Skinny Mobile',
-    period: 'January 2018 - December 2019',
-    location: 'Auckland, New Zealand',
-    metrics: [
-      { label: 'Customer Spend', value: '+25%' },
-      { label: 'Churn Reduction', value: '-10%' },
-      { label: 'Help Site Performance', value: '+130%' },
-    ],
-    description: [
-      'Designed targeted promotional campaigns (Free Data Weekends), increasing customer spend by 25% and reducing churn by 10% YoY in Q4 2018',
-      'Led self-service help site redevelopment, increasing page views by 130% MoM and reducing load times by 60% while deflecting support demand',
+    role: 'Product & Propositions Manager',
+    org: 'Skinny Mobile',
+    when: 'Jan 2018 — Dec 2019',
+    where: 'Auckland, NZ',
+    points: [
+      ['Ran targeted promotions (Free Data Weekends), growing customer spend ', '+25%', ' and cutting churn ', '10%', ' YoY.'],
+      ['Led self-service help-site rebuild — page views ', '+130%', ' MoM, load times down ', '60%', ', deflecting support demand.'],
     ],
   },
 ]

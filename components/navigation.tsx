@@ -1,130 +1,92 @@
 'use client'
 
-import { Linkedin, Github, Menu, X } from 'lucide-react'
-import Link from 'next/link'
 import { useState } from 'react'
+import { useTheme } from 'next-themes'
+import { Sun, Moon, Menu, X } from 'lucide-react'
 
-const navItems = [
-  { name: 'About', href: '#about' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Education', href: '#education' },
-  // { name: 'Blog', href: '/blog' },
+const BRAND_PATHS = {
+  github: 'M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12',
+  linkedin: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z',
+}
+
+function BrandIcon({ name, size = 18 }: { name: keyof typeof BRAND_PATHS; size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style={{ display: 'block' }}>
+      <path d={BRAND_PATHS[name]} />
+    </svg>
+  )
+}
+
+const links = [
+  { label: 'Work', id: 'work' },
+  { label: 'Experience', id: 'experience' },
+  { label: 'About', id: 'contact' },
 ]
 
+function scrollTo(id: string) {
+  if (id === 'top') {
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'instant' : 'smooth' })
+    return
+  }
+  const el = document.getElementById(id)
+  if (el) el.scrollIntoView({ behavior: prefersReducedMotion() ? 'instant' : 'smooth' })
+}
+
+function prefersReducedMotion() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches
+}
+
 export function Navigation() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [open, setOpen] = useState(false)
+  const { resolvedTheme, setTheme } = useTheme()
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('#')) {
-      // If we're not on the home page, navigate to home page first
-      if (window.location.pathname !== '/') {
-        window.location.href = '/' + href
-        return
-      }
-
-      e.preventDefault()
-      const element = document.querySelector(href)
-      if (element) {
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-        element.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' })
-      }
-      setMobileMenuOpen(false)
-    }
+  const go = (id: string) => {
+    setOpen(false)
+    scrollTo(id)
   }
 
+  const toggleTheme = () => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-zinc-950/90 backdrop-blur supports-[backdrop-filter]:bg-zinc-950/60">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-14">
-          <Link href="/" className="text-base font-semibold text-zinc-100 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 rounded-sm">
-            David Flynn-Coutts
-          </Link>
-
-          {/* Consolidated Navigation + Social */}
-          <div className="flex items-center gap-6">
-            {/* Desktop Navigation Links */}
-            <div className="hidden md:flex items-center space-x-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={(e) => scrollToSection(e, item.href)}
-                  className="relative px-3 py-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 rounded"
-                >
-                  {item.name}
-                  <span className="absolute bottom-1.5 left-3 right-3 h-px bg-zinc-100 scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
-                </Link>
-              ))}
-            </div>
-
-            {/* Contact CTA Button */}
-            <Link
-              href="#contact"
-              onClick={(e) => scrollToSection(e, '#contact')}
-              className="hidden md:block px-4 py-1.5 text-sm font-medium bg-accent text-white rounded-md hover:bg-accent-muted transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
-            >
-              Contact
-            </Link>
-
-            {/* Subtle Divider */}
-            <div className="hidden md:block h-5 w-px bg-zinc-700"></div>
-
-            {/* Social Icons + Mobile Menu */}
-            <div className="flex items-center space-x-3">
-              <a
-                href="https://github.com/bandicoutts"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zinc-400 hover:text-zinc-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 rounded"
-                aria-label="GitHub"
-              >
-                <Github className="h-5 w-5" />
-              </a>
-              <a
-                href="https://linkedin.com/in/davidflynncoutts"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zinc-400 hover:text-zinc-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 rounded"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-
-              {/* Mobile menu button */}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden text-zinc-400 hover:text-zinc-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950 rounded w-10 h-10 flex items-center justify-center"
-                aria-label="Toggle menu"
-              >
-                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
-            </div>
+    <nav className="nav">
+      <div className="nav__inner">
+        <button className="brand" onClick={() => go('top')} style={{ background: 'none', border: 'none', padding: 0 }}>
+          David Flynn-Coutts<span className="dot">.</span>
+        </button>
+        <div className="nav__right">
+          <div className="nav__links">
+            {links.map(({ label, id }) => (
+              <a key={id} onClick={() => go(id)}>{label}</a>
+            ))}
           </div>
+          <button className="iconbtn" onClick={toggleTheme} aria-label="Toggle colour theme">
+            {resolvedTheme === 'dark' ? <Sun size={17} strokeWidth={1.75} /> : <Moon size={17} strokeWidth={1.75} />}
+          </button>
+          <button className="btn btn--primary" onClick={() => go('contact')}>
+            Let&apos;s talk
+          </button>
+          <div className="nav__div" />
+          <div className="nav__social">
+            <a href="https://github.com/bandicoutts" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <BrandIcon name="github" size={18} />
+            </a>
+            <a href="https://linkedin.com/in/davidflynncoutts" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <BrandIcon name="linkedin" size={18} />
+            </a>
+          </div>
+          <button className="iconbtn hamburger" onClick={() => setOpen(!open)} aria-label="Menu">
+            {open ? <X size={18} strokeWidth={1.75} /> : <Menu size={18} strokeWidth={1.75} />}
+          </button>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="md:hidden border-t border-zinc-800 bg-zinc-950">
-          <div className="px-4 py-2 space-y-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={(e) => scrollToSection(e, item.href)}
-                className="block px-3 py-2 text-sm text-zinc-400 hover:text-zinc-100 transition-colors rounded-md hover:bg-zinc-800/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset"
-              >
-                {item.name}
-              </Link>
-            ))}
-            <Link
-              href="#contact"
-              onClick={(e) => scrollToSection(e, '#contact')}
-              className="block px-3 py-2 text-sm font-medium bg-accent text-white rounded-md hover:bg-accent-muted transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset"
-            >
-              Contact
-            </Link>
-          </div>
+      {open && (
+        <div className="mobile-menu">
+          {links.map(({ label, id }) => (
+            <a key={id} onClick={() => go(id)}>{label}</a>
+          ))}
+          <button className="btn btn--primary" onClick={() => go('contact')}>
+            Let&apos;s talk
+          </button>
         </div>
       )}
     </nav>
