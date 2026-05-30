@@ -44,7 +44,7 @@ export function Footer() {
           </div>
         </div>
         <div className="footer__bottom">
-          <span>© 2025 David Flynn-Coutts</span>
+          <span>© {new Date().getFullYear()} David Flynn-Coutts</span>
         </div>
       </div>
     </footer>
