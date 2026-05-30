@@ -17,17 +17,6 @@ export function Hero() {
         <div className="hero__grid">
           <div>
             <span className="eyebrow">Senior Product Manager · London</span>
-            <div className="hero__name">
-              <Image
-                src="/7819-0750.jpg"
-                alt="David Flynn-Coutts"
-                width={40}
-                height={40}
-                style={{ borderRadius: '999px', objectFit: 'cover' }}
-                priority
-              />
-              <span><b>David Flynn-Coutts</b> — health tech &amp; telco</span>
-            </div>
             <h1>
               PM by role. <em>Builder by habit.</em>
             </h1>
@@ -49,7 +38,6 @@ export function Hero() {
             </div>
           </div>
           <div className="hero__photo">
-            <div className="ring" />
             <Image
               src="/7819-0750.jpg"
               alt="David Flynn-Coutts"
