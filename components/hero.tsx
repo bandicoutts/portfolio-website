@@ -39,7 +39,7 @@ export function Hero() {
               transition={{ duration: 0.6, ease: EASE, delay: 0.2 }}
             >
               Eight years in NHS health tech and telco. I&apos;ve shipped clinical integrations,
-              fixed broken billing, and built some things in my own time.
+              recovered $700K in billing leakage, and built some things in my own time.
             </motion.p>
             <motion.div
               className="hero__cta"

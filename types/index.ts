@@ -6,6 +6,7 @@ export interface Experience {
   org: string
   when: string
   where: string
+  context?: string
   current?: boolean
   points: ExperiencePoint[]
 }

@@ -5,7 +5,7 @@ import { EASE } from '@/components/motion-primitives'
 
 export function Education() {
   return (
-    <section className="section section--tight" id="education">
+    <section className="section section--tight section--subtle" id="education">
       <div className="wrap">
         <motion.span
           className="eyebrow"

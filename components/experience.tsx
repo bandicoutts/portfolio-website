@@ -70,7 +70,9 @@ export function Experience() {
                   <div className="xp__role">
                     {x.role} <span className="org">· {x.org}</span>
                   </div>
-                  <div className="xp__where">{x.where}</div>
+                  <div className="xp__where">
+                    {x.where}{x.context ? <span className="xp__context"> · {x.context}</span> : null}
+                  </div>
                 </div>
                 <div className="xp__when">{x.when}</div>
               </div>

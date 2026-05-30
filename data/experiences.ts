@@ -28,6 +28,7 @@ export const experiences: Experience[] = [
     org: 'Skinny Mobile',
     when: 'Jan 2018 — Dec 2019',
     where: 'Auckland, NZ',
+    context: 'Vodafone-owned prepaid MVNO',
     points: [
       ['Designed and ran targeted promotional campaigns (Free Data Weekends), growing customer spend ', '+25%', ' and cutting churn ', '10%', ' YoY.'],
       ['Led self-service help-site rebuild: page views ', '+130%', ' MoM, load times down ', '60%', ', reducing reliance on Level 1 support through better self-service.'],
@@ -38,6 +39,7 @@ export const experiences: Experience[] = [
     org: 'Spark New Zealand',
     when: '2016 — 2018',
     where: 'Auckland, NZ',
+    context: "NZ's largest telco",
     points: [],
   },
 ]

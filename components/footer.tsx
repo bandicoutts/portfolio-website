@@ -19,10 +19,6 @@ export function Footer() {
               Senior Product Manager building products people rely on across health tech, telco,
               and a couple of things of my own.
             </p>
-            <div className="footer__avail">
-              <span className="pulse" />
-              Open to roles &amp; freelance
-            </div>
           </div>
           <div className="footer__col">
             <h5>Site</h5>

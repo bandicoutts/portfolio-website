@@ -14,10 +14,19 @@ function StayrightCard() {
   return (
     <div className="sr">
       <div>
-        <span className="pill pill--live">
-          <span className="dot" />
-          Live · in development
-        </span>
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+          <span className="pill pill--live">
+            <span className="dot" />
+            Live
+          </span>
+          <span className="pill" style={{
+            color: 'var(--fg-muted)',
+            border: '1px solid var(--border-strong)',
+            background: 'var(--bg-subtle)',
+          }}>
+            In development
+          </span>
+        </div>
         <h3 className="sr__title">Stayright</h3>
         <p className="sr__desc">
           Skilled Worker visa holders risk losing ILR eligibility if they exceed 180 days outside
@@ -62,9 +71,9 @@ function ParityCard() {
         >
           Daily puzzle · for fun
         </span>
-        <h3 className="pr__title">Parity</h3>
+        <h3 className="pr__title">Halve</h3>
         <p className="pr__desc">
-          A daily deduction puzzle: 6×6 grid, one solution per day, no guessing allowed. Built
+          A daily deduction puzzle: one solution per day, no guessing allowed. Built
           the puzzle engine (generator, solver, uniqueness verifier, difficulty rating) and
           shipped the full stack. The interesting part wasn&apos;t the code. It was making every
           decision myself: grid constraints, type scale, streak UX, share-card copy. And
@@ -76,19 +85,19 @@ function ParityCard() {
           <span>Vercel</span>
           <span>custom design system</span>
         </div>
-        <span className="linkout" style={{ cursor: 'default' }}>
-          Built for curiosity &amp; range <Sparkles size={15} strokeWidth={1.75} />
-        </span>
+        <a className="linkout" href="https://parity-web-rpwn.vercel.app/" target="_blank" rel="noopener noreferrer">
+          Play Halve <Sparkles size={15} strokeWidth={1.75} />
+        </a>
       </div>
       <div className="browser">
         <div className="browser__bar">
           <i /><i /><i />
-          <span className="browser__url">Parity</span>
+          <span className="browser__url">Halve</span>
         </div>
         <div className="browser__screen" style={{ padding: 0, overflow: 'hidden' }}>
           <Image
             src="/parity.png"
-            alt="Parity puzzle game"
+            alt="Halve puzzle game"
             width={600}
             height={400}
             style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', display: 'block' }}
