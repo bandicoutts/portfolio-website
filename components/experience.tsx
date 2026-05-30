@@ -35,11 +35,13 @@ export function Experience() {
                 </div>
                 <div className="xp__when">{x.when}</div>
               </div>
-              <ul className="xp__body">
-                {x.points.map((p, j) => (
-                  <Point key={j} parts={p} />
-                ))}
-              </ul>
+              {x.points.length > 0 && (
+                <ul className="xp__body">
+                  {x.points.map((p, j) => (
+                    <Point key={j} parts={p} />
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </div>

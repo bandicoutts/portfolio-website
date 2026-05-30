@@ -32,8 +32,8 @@ export function Hero() {
               Most PMs can describe a great product. <em>Fewer can build one.</em>
             </h1>
             <p className="hero__lead">
-              Six years across health tech and telco — revenue growth, operational efficiency,
-              user-centred execution. A PM who ships the thing, not just the PRD.
+              Six years shipping NHS integrations, clinical workflows, and telco billing systems.
+              I read the API docs and sit with the users. A PM who ships the thing, not just the PRD.
             </p>
             <div className="hero__cta">
               <button className="btn btn--primary" onClick={() => scrollTo('contact')}>

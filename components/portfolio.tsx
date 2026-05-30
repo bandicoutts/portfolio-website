@@ -15,23 +15,9 @@ function StayrightCard() {
         <p className="sr__desc">
           Skilled Worker visa holders risk losing ILR eligibility if they exceed 180 days outside
           the UK in any rolling year. I hit this problem personally, found no tooling worth using,
-          and built one. StayRight is a live SaaS product — absence tracking, real-time compliance
+          and built one. StayRight is a live SaaS product: absence tracking, real-time compliance
           risk, audit-ready exports. Designed, built, and shipped by me. Paying users. Growing.
         </p>
-        <ul className="sr__feat">
-          <li>
-            <Check size={17} strokeWidth={2} />
-            Real product with paying intent and traction
-          </li>
-          <li>
-            <Check size={17} strokeWidth={2} />
-            Designed, built and shipped end-to-end
-          </li>
-          <li>
-            <Check size={17} strokeWidth={2} />
-            Evidence I operate as builder, not just manager
-          </li>
-        </ul>
         <a className="linkout" href="https://stayright.vercel.app" target="_blank" rel="noopener noreferrer">
           stayright.vercel.app <ArrowUpRight size={15} strokeWidth={1.75} />
         </a>
@@ -104,12 +90,11 @@ function ParityCard() {
         </span>
         <h3 className="pr__title">Parity</h3>
         <p className="pr__desc">
-          A 6×6 grid of fire and water, solved by deduction alone — no guessing, one solution. I
-          wrote the game rules, built the puzzle engine (generator, solver, uniqueness verifier,
-          difficulty rating), and shipped the full stack: a custom design system with locked tokens,
-          Next.js, Supabase, and Vercel. The interesting part wasn&apos;t the engineering. It was
-          making every decision myself — grid constraints, type scale, streak UX, share-card copy —
-          and discovering which ones were actually hard.
+          A daily deduction puzzle: 6×6 grid, one solution per day, no guessing allowed. Built
+          solo: game rules, puzzle engine (generator, solver, uniqueness verifier, difficulty
+          rating), and full stack. The interesting part wasn&apos;t the code. It was making every
+          decision myself (grid constraints, type scale, streak UX, share-card copy) and
+          discovering which ones were actually hard.
         </p>
         <div className="pr__tags">
           <span>Next.js</span>
@@ -152,7 +137,7 @@ export function Portfolio() {
           Things I&apos;ve actually built.
         </h2>
         <p className="t-lead" style={{ maxWidth: 520, margin: 0 }}>
-          Two projects, two different intentions — one a real product, one an experiment.
+          Two projects, built for different reasons. Both shipped.
         </p>
         <div className="work">
           <StayrightCard />
