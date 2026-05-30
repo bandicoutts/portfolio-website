@@ -18,8 +18,9 @@ function BrandIcon({ name, size = 18 }: { name: keyof typeof BRAND_PATHS; size?:
 }
 
 const links = [
-  { label: 'Work', id: 'work' },
   { label: 'Experience', id: 'experience' },
+  { label: 'Work', id: 'work' },
+  { label: 'Education', id: 'education' },
   { label: 'About', id: 'contact' },
 ]
 
