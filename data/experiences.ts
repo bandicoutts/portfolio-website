@@ -11,6 +11,7 @@ export const experiences: Experience[] = [
       ['Defined and negotiated ', 'HL7 FHIR', ' API specifications with NHS Scotland, integrating national SSO, EMPI, and image storage platforms to remove onboarding friction and reduce clinical risk.'],
 ['Diagnosed why primary care users were dissatisfied, built a structured feedback and resolution process across support channels, and confirmed resolution with each user directly. NPS moved from +4 to ', '+30', ' within 18 months.'],
       ['Shipped GP records integration via Docman Connect, routing completed clinical correspondence automatically into EMIS and SystmOne, processing ', '800+', ' documents daily at a ', '96%', ' acceptance rate with zero clinical data loss.'],
+      ['Shipped Automated Outcomes, a new product using transcription and a hosted LLM to automate clinical outcome capture from call transcripts, owning end-to-end clinical risk governance. One service moved from ', '4%', ' to ', '97%', ' capture rate, giving commissioners the data to demonstrate ROI and support contract renewals.'],
     ],
   },
   {

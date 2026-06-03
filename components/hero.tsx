@@ -50,7 +50,7 @@ export function Hero() {
               <button className="btn btn--primary" onClick={() => scrollTo('contact')}>
                 Let&apos;s talk <ArrowRight size={16} strokeWidth={1.75} />
               </button>
-              <a className="btn btn--secondary" href="/DavidFlynnCoutts_Resume_May2025.pdf" download>
+              <a className="btn btn--secondary" href="/DavidFlynnCoutts_Resume.pdf" download>
                 <Download size={16} strokeWidth={1.75} /> Download CV
               </a>
             </motion.div>
