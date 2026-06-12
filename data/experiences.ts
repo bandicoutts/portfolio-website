@@ -40,7 +40,7 @@ export const experiences: Experience[] = [
     org: 'Spark New Zealand',
     when: '2016 — 2018',
     where: 'Auckland, NZ',
-    context: "NZ's largest telco",
+    context: "NZ's largest telecoms company",
     points: [],
   },
 ]

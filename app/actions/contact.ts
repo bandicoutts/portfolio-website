@@ -14,11 +14,11 @@ export async function submitContact(data: ContactPayload): Promise<{ success: bo
   const { name, email, message } = data
 
   if (!name.trim() || !email.trim() || !message.trim()) {
-    return { success: false, error: 'All fields are required.' }
+    return { success: false, error: 'Add your name, email and a short message.' }
   }
 
   if (!/\S+@\S+\.\S+/.test(email)) {
-    return { success: false, error: 'Please enter a valid email address.' }
+    return { success: false, error: 'Enter a valid email address so I can reply.' }
   }
 
   const { error } = await resend.emails.send({
@@ -30,7 +30,7 @@ export async function submitContact(data: ContactPayload): Promise<{ success: bo
   })
 
   if (error) {
-    return { success: false, error: 'Failed to send message. Please try emailing directly.' }
+    return { success: false, error: 'The form did not send. Email me directly at d.coutts@gmail.com.' }
   }
 
   return { success: true }

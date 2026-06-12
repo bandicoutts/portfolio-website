@@ -6,30 +6,20 @@ const roles = [
     title: 'Senior Product Manager',
     paragraphs: [
       <>
-        Owned platform and integration products used across NHS primary and secondary care,
-        covering AI product development, clinical safety, adoption and revenue retention.
+        Led iOS, Android, web, AI and integration products across NHS primary and secondary care,
+        balancing clinical safety, adoption and revenue retention in live regulated services.
       </>,
       <>
-        Led the Scotland-wide digital dermatology expansion to all <span className="n">14</span>{' '}
-        NHS health boards and <span className="n">535</span> GP practices. Retained{' '}
+        Expanded digital dermatology across all <span className="n">14</span> NHS Scotland health
+        boards and <span className="n">535</span> GP practices. Retained{' '}
         <span className="n">£2M</span> in at-risk contracts, grew Scotland revenue{' '}
-        <span className="n">20%</span> over two years and processed{' '}
-        <span className="n">13,000+</span> referrals in the first year.
+        <span className="n">20%</span> and processed <span className="n">13,000+</span> referrals.
       </>,
       <>
-        Negotiated HL7 FHIR API specifications directly with NHS Scotland, integrating national
-        SSO, patient demographics (EMPI) and national image storage (NDP).
-      </>,
-      <>
-        Shipped Automated Outcomes, which uses AWS Medical Transcribe and a hosted LLM to capture
-        clinical outcomes from call transcripts. Owned clinical risk governance end to end. One
-        service went from <span className="n">4%</span> to <span className="n">97%</span> outcome
-        capture.
-      </>,
-      <>
-        Shipped GP records integration into EMIS and SystmOne:{' '}
-        <span className="n">800+</span> clinical documents a day,{' '}
-        <span className="n">96%</span> automated acceptance, zero clinical data loss.
+        Shipped Automated Outcomes and GP-record integrations into EMIS and SystmOne, moving one
+        NHS service from <span className="n">4%</span> to <span className="n">97%</span> outcome
+        capture and routing <span className="n">800+</span> clinical documents a day with zero
+        clinical data loss.
       </>,
     ],
     figures: [
@@ -44,15 +34,21 @@ const roles = [
     title: 'Product Manager',
     paragraphs: [
       <>
+        Owned pricing integrity and billing experience for broadband products, where small
+        configuration errors could create material revenue leakage.
+      </>,
+      <>
         Found systemic billing leakage through data analysis, corrected{' '}
         <span className="n">1,500</span> undercharged accounts and recovered{' '}
-        <span className="n">NZ$700K</span> in three months at a cost of NZ$12K. A targeted fix,
-        chosen over a full billing system rebuild. Launched Business Wireless Broadband:{' '}
-        <span className="n">1,000</span> live connections in the first month, then roughly{' '}
+        <span className="n">NZ$700K</span> in three months at a cost of NZ$12K.
+      </>,
+      <>
+        Launched Business Wireless Broadband: <span className="n">1,000</span> live connections in
+        month one, then roughly{' '}
         <span className="n">25%</span> month-on-month growth for six months.
       </>,
     ],
-    figures: [{ value: '58x', label: 'return on the recovery work' }],
+    figures: [{ value: '58×', label: 'return on the recovery work' }],
   },
   {
     company: 'Skinny Mobile',
@@ -61,10 +57,14 @@ const roles = [
     title: 'Product & Propositions Manager',
     paragraphs: [
       <>
+        Led propositions for a high-volume consumer mobile brand, balancing promotional
+        experimentation with margin and churn constraints.
+      </>,
+      <>
         Ran targeted promotions such as Free Data Weekends: customer spend up{' '}
         <span className="n">25%</span>, churn down <span className="n">10%</span> year on year.
         Rebuilt the self-service help site: page views up <span className="n">130%</span>, load
-        times down <span className="n">60%</span>, fewer contacts reaching Level 1 support.
+        times down <span className="n">60%</span>, fewer customers needing Level 1 support.
       </>,
     ],
     figures: [{ value: '-10%', label: 'churn, year on year' }],

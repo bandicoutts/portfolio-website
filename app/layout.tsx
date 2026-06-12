@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://flynncoutts.com"),
   title: "David Flynn-Coutts | Senior Product Manager",
   description:
-    "Senior Product Manager with eight years in NHS health tech and telecoms, most recently leading integration and AI products at Consultant Connect.",
+    "Senior Product Manager with eight years in NHS health tech and telecoms, most recently leading integrations and AI products at Consultant Connect.",
   keywords: [
     "Product Manager",
     "Senior Product Manager",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     url: "https://flynncoutts.com",
     title: "David Flynn-Coutts | Senior Product Manager",
     description:
-      "Senior Product Manager with eight years in NHS health tech and telecoms, most recently leading integration and AI products at Consultant Connect.",
+      "Senior Product Manager with eight years in NHS health tech and telecoms, most recently leading integrations and AI products at Consultant Connect.",
     siteName: "David Flynn-Coutts Portfolio",
     images: [
       {

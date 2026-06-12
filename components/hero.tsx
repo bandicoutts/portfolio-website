@@ -3,23 +3,23 @@ import Image from 'next/image'
 const ledgerRows = [
   {
     what: 'Billing leakage recovered',
-    context: 'Vodafone NZ, three months, at a cost of NZ$12K: a 58x return',
+    context: 'Vodafone NZ, recovered in three months at a cost of NZ$12K',
     value: 'NZ$700,000',
   },
   {
-    what: 'NHS Scotland health boards live with digital dermatology',
-    context: 'all of them',
+    what: 'NHS Scotland health boards using digital dermatology',
+    context: 'nationwide rollout across Scotland',
     value: '14 / 14',
   },
   {
     what: 'NPS among primary care users',
     context: 'over 18 months',
-    value: '+4 -> +30',
+    value: '+4 to +30',
   },
   {
-    what: 'Clinical outcome capture on one service',
+    what: 'Clinical outcome capture for one NHS service',
     context: 'after shipping Automated Outcomes',
-    value: '4% -> 97%',
+    value: '4% to 97%',
   },
   {
     what: 'Clinical documents routed daily into EMIS & SystmOne',
@@ -34,14 +34,15 @@ export function Hero() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero__main">
           <h1 id="hero-title">
-            A product manager
+            A product manager{' '}
             <br />
-            who ships his own
-            <span className="l2">software.</span>
+            for products that{' '}
+            <span className="l2">have to work.</span>
           </h1>
           <p className="hero__lead">
-            Eight years in NHS health tech and telecoms, most recently leading integration and AI
-            products at Consultant Connect. Outside work I design and ship my own software.
+            Eight years across NHS health tech and telecoms, most recently leading iOS, Android,
+            web, AI and integration products at Consultant Connect. Outside work, I build the
+            software I wish existed.
           </p>
           <div className="text-links">
             <a className="tlink" href="#contact">
@@ -63,8 +64,8 @@ export function Hero() {
             />
           </div>
           <p className="caption">
-            Senior Product Manager in London. Product, integrations, AI products and hands-on
-            software shipping.
+            Senior Product Manager in London. Integrations, AI products and hands-on software
+            shipping.
           </p>
         </aside>
       </section>
@@ -72,7 +73,7 @@ export function Hero() {
       <section className="ledger" id="record" aria-labelledby="record-title">
         <div className="ledger__head">
           <span id="record-title">01 — The record</span>
-          <span>verified figures</span>
+          <span>selected outcomes</span>
         </div>
         {ledgerRows.map(row => (
           <div className="ledger__row" key={row.what}>

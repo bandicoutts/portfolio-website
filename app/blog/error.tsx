@@ -13,8 +13,8 @@ export default function BlogError({
     <ErrorLayout
       error={error}
       reset={reset}
-      title="Error loading blog"
-      message="An error occurred while loading the blog. Please try again."
+      title="The notes page did not load."
+      message="Try again, or head back to the homepage."
     />
   )
 }

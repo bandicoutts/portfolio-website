@@ -16,8 +16,8 @@ interface ErrorLayoutProps {
 export function ErrorLayout({
   error,
   reset,
-  title = 'Something went wrong',
-  message = 'An error occurred while loading this page. Please try again.'
+  title = 'This page did not load.',
+  message = 'Try again, or head back to the homepage if it keeps happening.'
 }: ErrorLayoutProps) {
   useEffect(() => {
     console.error(error)
@@ -26,19 +26,22 @@ export function ErrorLayout({
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl font-bold text-zinc-100 mb-4">{title}</h1>
-          <p className="text-zinc-400 mb-8">{message}</p>
-          <div className="flex gap-4 justify-center">
-            <Button onClick={reset} variant="primary">
+      <main className="plain-page">
+        <section className="plain-page__inner" aria-labelledby="error-title">
+          <span className="plain-page__kicker">Error</span>
+          <h1 id="error-title">{title}</h1>
+          <p>{message}</p>
+          <div className="plain-page__actions">
+            <Button onClick={reset} variant="primary" className="plain-button">
               Try again
             </Button>
             <Link href="/">
-              <Button variant="secondary">Go home</Button>
+              <Button variant="secondary" className="plain-button plain-button--secondary">
+                Back to the homepage
+              </Button>
             </Link>
           </div>
-        </div>
+        </section>
       </main>
       <Footer />
     </>

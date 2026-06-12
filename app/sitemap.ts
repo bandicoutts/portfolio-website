@@ -11,19 +11,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [
+  const urls: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
     },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    ...blogUrls,
   ]
+
+  if (blogPosts.length > 0) {
+    urls.push(
+      {
+        url: `${baseUrl}/blog`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.8,
+      },
+      ...blogUrls
+    )
+  }
+
+  return urls
 }

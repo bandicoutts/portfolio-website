@@ -5,7 +5,7 @@ const projects = [
     title: 'StayRight',
     meta: 'stayright.vercel.app · Live',
     description:
-      'Skilled Worker visa holders lose ILR eligibility if they spend more than 180 days outside the UK in any rolling 12 months. I had this problem myself, and the available tools were spreadsheets. StayRight tracks absences, calculates compliance risk in real time and exports audit-ready reports.',
+      'Skilled Worker visa holders lose ILR eligibility if they spend more than 180 days outside the UK in any rolling 12 months. I had this problem myself, and the available tools were spreadsheets. StayRight tracks absences, flags compliance risk in real time and exports audit-ready reports.',
     href: 'https://stayright.vercel.app',
     cta: 'Visit StayRight',
     image: '/stayright.png',
@@ -16,7 +16,7 @@ const projects = [
     title: 'Halve',
     meta: 'daily puzzle · Next.js · Supabase · Vercel',
     description:
-      'A daily deduction puzzle with one unique solution and no guessing. I built the engine first: generator, solver, uniqueness verifier, difficulty rating. Then everything around it: grid sizing, type scale, streaks, share cards. The design decisions were harder than the engineering.',
+      'A daily deduction puzzle with one unique solution and no guessing. I built the engine first: generator, solver, uniqueness verifier, difficulty rating. Then I built the product around it: grid sizing, type scale, streaks, share cards and all the small decisions that make a puzzle feel fair.',
     href: 'https://parity-web-rpwn.vercel.app/',
     cta: 'Play Halve',
     image: '/parity.png',

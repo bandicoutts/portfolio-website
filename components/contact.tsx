@@ -10,18 +10,22 @@ function ContactForm() {
   const [touched, setTouched] = useState({ name: false, email: false, message: false })
   const [sent, setSent] = useState(false)
   const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   const set = (key: keyof typeof form) => (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => setForm(prev => ({ ...prev, [key]: e.target.value }))
+  ) => {
+    setSubmitError(null)
+    setForm(prev => ({ ...prev, [key]: e.target.value }))
+  }
 
   const blur = (key: keyof typeof touched) => () =>
     setTouched(prev => ({ ...prev, [key]: true }))
 
   const errors = {
-    name: touched.name && !form.name.trim() ? 'Required' : null,
-    email: touched.email && !EMAIL_RE.test(form.email) ? 'Enter a valid email' : null,
-    message: touched.message && !form.message.trim() ? 'Required' : null,
+    name: touched.name && !form.name.trim() ? 'Add your name' : null,
+    email: touched.email && !EMAIL_RE.test(form.email) ? 'Enter a valid email address' : null,
+    message: touched.message && !form.message.trim() ? 'Add a short message' : null,
   }
 
   const valid = form.name.trim() && EMAIL_RE.test(form.email) && form.message.trim()
@@ -37,6 +41,8 @@ function ContactForm() {
 
     if (result.success) {
       setSent(true)
+    } else {
+      setSubmitError(result.error ?? 'The message did not send. Email me directly instead.')
     }
   }
 
@@ -93,6 +99,7 @@ function ContactForm() {
       <button className="send" type="submit" disabled={submitting}>
         {submitting ? 'Sending...' : 'Send message'}
       </button>
+      {submitError && <p className="form__error" role="alert">{submitError}</p>}
     </form>
   )
 }
@@ -105,8 +112,8 @@ export function Contact() {
           <span className="kick">04 — Contact</span>
           <h2 id="contact-title">Get in touch</h2>
           <p>
-            I&apos;m open to Senior PM roles and select freelance work. Tell me what you&apos;re
-            working on.
+            I&apos;m open to Senior PM roles and select freelance work. Send a note about what
+            you&apos;re building or hiring for.
           </p>
           <div className="elsewhere">
             <div>
