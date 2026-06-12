@@ -39,9 +39,9 @@ export function Hero() {
             <span className="hline l2">have to work.</span>
           </h1>
           <p className="hero__lead">
-            Eight years across NHS health tech and telecoms, most recently leading iOS, Android,
-            web, AI and integration products at Consultant Connect. Outside work, I build the
-            software I wish existed.
+            Eight years across NHS health tech and telecoms, most recently leading mobile, web, AI
+            and integration products at Consultant Connect. Outside work, I build software for
+            problems I run into myself.
           </p>
           <div className="text-links">
             <a className="tlink" href="#contact">
