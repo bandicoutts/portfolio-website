@@ -33,11 +33,10 @@ export function Hero() {
     <>
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero__main">
-          <h1 id="hero-title">
-            A product manager{' '}
-            <br />
-            for products that{' '}
-            <span className="l2">have to work.</span>
+          <h1 id="hero-title" aria-label="A product manager for products that have to work.">
+            <span className="hline">A product manager</span>{' '}
+            <span className="hline">for products that</span>{' '}
+            <span className="hline l2">have to work.</span>
           </h1>
           <p className="hero__lead">
             Eight years across NHS health tech and telecoms, most recently leading iOS, Android,
