@@ -1,23 +1,35 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque } from "next/font/google";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+import { Newsreader, Schibsted_Grotesk, Spline_Sans_Mono } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+const schibsted = Schibsted_Grotesk({
+  variable: "--font-schibsted",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+const splineMono = Spline_Sans_Mono({
+  variable: "--font-spline-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://davidflynncoutts.com"),
+  metadataBase: new URL("https://flynncoutts.com"),
   title: "David Flynn-Coutts | Senior Product Manager",
   description:
-    "Senior Product Manager with 6 years of experience in health tech and telecommunications. Track record of driving revenue growth, streamlining operations and building products people like to use.",
+    "Senior Product Manager with eight years in NHS health tech and telecoms, most recently leading integration and AI products at Consultant Connect.",
   keywords: [
     "Product Manager",
     "Senior Product Manager",
@@ -31,10 +43,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_GB",
-    url: "https://davidflynncoutts.com",
+    url: "https://flynncoutts.com",
     title: "David Flynn-Coutts | Senior Product Manager",
     description:
-      "Senior Product Manager with 6 years of experience in health tech and telecommunications. Track record of driving revenue growth, streamlining operations and building products people like to use.",
+      "Senior Product Manager with eight years in NHS health tech and telecoms, most recently leading integration and AI products at Consultant Connect.",
     siteName: "David Flynn-Coutts Portfolio",
     images: [
       {
@@ -49,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "David Flynn-Coutts | Senior Product Manager",
     description:
-      "Senior Product Manager with 6 years of experience in health tech and telecommunications.",
+      "Senior Product Manager with eight years in NHS health tech and telecoms.",
     images: ["/7819-0750.jpg"],
   },
   robots: {
@@ -74,10 +86,10 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${bricolage.variable} ${GeistSans.variable} ${GeistMono.variable}`}
+      className={`${newsreader.variable} ${schibsted.variable} ${splineMono.variable}`}
     >
       <body suppressHydrationWarning>
-        <ThemeProvider attribute="data-theme" defaultTheme="dark" disableTransitionOnChange>
+        <ThemeProvider attribute="data-theme" defaultTheme="light" forcedTheme="light" disableTransitionOnChange>
           {children}
         </ThemeProvider>
         <SpeedInsights />

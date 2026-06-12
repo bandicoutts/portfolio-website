@@ -1,10 +1,7 @@
 'use client'
 
-import Image from 'next/image'
 import { useState } from 'react'
-import { Check, ArrowRight } from 'lucide-react'
 import { submitContact } from '@/app/actions/contact'
-import { BrandIcon } from '@/lib/brand-icons'
 
 const EMAIL_RE = /\S+@\S+\.\S+/
 
@@ -14,11 +11,12 @@ function ContactForm() {
   const [sent, setSent] = useState(false)
   const [submitting, setSubmitting] = useState(false)
 
-  const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-    setForm({ ...form, [k]: e.target.value })
+  const set = (key: keyof typeof form) => (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => setForm(prev => ({ ...prev, [key]: e.target.value }))
 
-  const blur = (k: keyof typeof touched) => () =>
-    setTouched(prev => ({ ...prev, [k]: true }))
+  const blur = (key: keyof typeof touched) => () =>
+    setTouched(prev => ({ ...prev, [key]: true }))
 
   const errors = {
     name: touched.name && !form.name.trim() ? 'Required' : null,
@@ -32,22 +30,24 @@ function ContactForm() {
     e.preventDefault()
     setTouched({ name: true, email: true, message: true })
     if (!valid) return
+
     setSubmitting(true)
-    await submitContact(form)
-    setSent(true)
+    const result = await submitContact(form)
     setSubmitting(false)
+
+    if (result.success) {
+      setSent(true)
+    }
   }
 
   if (sent) {
     return (
-      <div className="form">
-        <div className="form__success">
-          <div className="ok">
-            <Check size={24} strokeWidth={2.25} />
-          </div>
-          <h4>Message sent</h4>
+      <div className="contact__form">
+        <div className="form__success" role="status">
+          <h3>Message sent</h3>
           <p>
-            Thanks, {form.name.split(' ')[0] || 'there'} — I&apos;ll get back to you within a day or two.
+            Thanks, {form.name.split(' ')[0] || 'there'}. I&apos;ll get back to you within a day
+            or two.
           </p>
         </div>
       </div>
@@ -55,53 +55,43 @@ function ContactForm() {
   }
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <div className="form__row">
-        <div className="field">
-          <label htmlFor="c-name">Name</label>
-          <input
-            id="c-name"
-            value={form.name}
-            onChange={set('name')}
-            onBlur={blur('name')}
-            placeholder="Your name"
-            autoComplete="name"
-          />
-          {errors.name && <span className="field__error">{errors.name}</span>}
-        </div>
-        <div className="field">
-          <label htmlFor="c-email">Email</label>
-          <input
-            id="c-email"
-            type="email"
-            value={form.email}
-            onChange={set('email')}
-            onBlur={blur('email')}
-            placeholder="you@company.com"
-            autoComplete="email"
-          />
-          {errors.email && <span className="field__error">{errors.email}</span>}
-        </div>
+    <form className="contact__form" onSubmit={handleSubmit}>
+      <div className="field">
+        <label htmlFor="contact-name">Name</label>
+        <input
+          id="contact-name"
+          value={form.name}
+          onChange={set('name')}
+          onBlur={blur('name')}
+          autoComplete="name"
+        />
+        {errors.name && <span className="field__error">{errors.name}</span>}
       </div>
       <div className="field">
-        <label htmlFor="c-msg">Message</label>
+        <label htmlFor="contact-email">Email</label>
+        <input
+          id="contact-email"
+          type="email"
+          value={form.email}
+          onChange={set('email')}
+          onBlur={blur('email')}
+          autoComplete="email"
+        />
+        {errors.email && <span className="field__error">{errors.email}</span>}
+      </div>
+      <div className="field">
+        <label htmlFor="contact-message">Message</label>
         <textarea
-          id="c-msg"
-          rows={4}
+          id="contact-message"
+          rows={3}
           value={form.message}
           onChange={set('message')}
           onBlur={blur('message')}
-          placeholder="What would you like to talk about?"
         />
         {errors.message && <span className="field__error">{errors.message}</span>}
       </div>
-      <button
-        className="btn btn--primary"
-        type="submit"
-        disabled={submitting}
-        style={{ width: '100%', justifyContent: 'center' }}
-      >
-        {submitting ? 'Sending…' : <><span>Send message</span> <ArrowRight size={16} strokeWidth={1.75} /></>}
+      <button className="send" type="submit" disabled={submitting}>
+        {submitting ? 'Sending...' : 'Send message'}
       </button>
     </form>
   )
@@ -109,46 +99,29 @@ function ContactForm() {
 
 export function Contact() {
   return (
-    <section className="section section--subtle" id="contact">
-      <div className="wrap">
-        <span className="eyebrow">Let&apos;s talk</span>
-        <h2 className="t-h1" style={{ marginTop: 16, marginBottom: 0 }}>
-          Hiring, building, or just curious?
-        </h2>
-        <div className="contact__grid">
-          <p className="contact__lead">
+    <section className="contact" id="contact" aria-labelledby="contact-title">
+      <div className="contact__inner">
+        <div className="contact__lead">
+          <span className="kick">04 — Contact</span>
+          <h2 id="contact-title">Get in touch</h2>
+          <p>
             I&apos;m open to Senior PM roles and select freelance work. Tell me what you&apos;re
             working on.
           </p>
-          <div className="contact__profile">
-            <div className="contact__card">
-              <Image
-                src="/7819-0750.jpg"
-                alt="David Flynn-Coutts"
-                width={56}
-                height={56}
-                style={{ borderRadius: '999px', objectFit: 'cover' }}
-              />
-              <div>
-                <div className="nm">David Flynn-Coutts</div>
-                <div className="rl">Senior Product Manager</div>
-              </div>
-            </div>
-            <div className="contact__links">
+          <div className="elsewhere">
+            <div>
               <a href="https://linkedin.com/in/davidflynncoutts" target="_blank" rel="noopener noreferrer">
-                <BrandIcon name="linkedin" size={17} />
                 linkedin.com/in/davidflynncoutts
               </a>
+            </div>
+            <div>
               <a href="https://github.com/bandicoutts" target="_blank" rel="noopener noreferrer">
-                <BrandIcon name="github" size={17} />
                 github.com/bandicoutts
               </a>
             </div>
           </div>
-          <div className="contact__form-wrap">
-            <ContactForm />
-          </div>
         </div>
+        <ContactForm />
       </div>
     </section>
   )

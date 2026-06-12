@@ -1,91 +1,88 @@
-'use client'
-
 import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { ArrowRight, Download, MapPin } from 'lucide-react'
-import { EASE } from '@/components/motion-primitives'
 
-function scrollTo(id: string) {
-  const el = document.getElementById(id)
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-  if (el) el.scrollIntoView({ behavior: reduced ? 'instant' : 'smooth' })
-}
+const ledgerRows = [
+  {
+    what: 'Billing leakage recovered',
+    context: 'Vodafone NZ, three months, at a cost of NZ$12K: a 58x return',
+    value: 'NZ$700,000',
+  },
+  {
+    what: 'NHS Scotland health boards live with digital dermatology',
+    context: 'all of them',
+    value: '14 / 14',
+  },
+  {
+    what: 'NPS among primary care users',
+    context: 'over 18 months',
+    value: '+4 -> +30',
+  },
+  {
+    what: 'Clinical outcome capture on one service',
+    context: 'after shipping Automated Outcomes',
+    value: '4% -> 97%',
+  },
+  {
+    what: 'Clinical documents routed daily into EMIS & SystmOne',
+    context: 'at 96% acceptance, zero clinical data loss',
+    value: '800+',
+  },
+]
 
 export function Hero() {
   return (
-    <header className="hero" id="top">
-      <div className="wrap">
-        <div className="hero__grid">
-          <div>
-            <motion.span
-              className="eyebrow"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, ease: EASE }}
-            >
-              Senior Product Manager · London
-            </motion.span>
-            <motion.h1
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, ease: EASE, delay: 0.1 }}
-            >
-              PM by role. <em>Builder by habit.</em>
-            </motion.h1>
-            <motion.p
-              className="hero__lead"
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: EASE, delay: 0.2 }}
-            >
-              Eight years in NHS health tech and telco. I&apos;ve shipped clinical integrations,
-              recovered $700K in billing leakage, and built some things in my own time.
-            </motion.p>
-            <motion.div
-              className="hero__cta"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, ease: EASE, delay: 0.3 }}
-            >
-              <button className="btn btn--primary" onClick={() => scrollTo('contact')}>
-                Let&apos;s talk <ArrowRight size={16} strokeWidth={1.75} />
-              </button>
-              <a className="btn btn--secondary" href="/DavidFlynnCoutts_Resume.pdf" download>
-                <Download size={16} strokeWidth={1.75} /> Download CV
-              </a>
-            </motion.div>
-            <motion.div
-              className="hero__avail"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, ease: EASE, delay: 0.45 }}
-            >
-              <span className="pulse" />
-              Open to Senior PM roles &amp; freelance
-            </motion.div>
+    <>
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="hero__main">
+          <h1 id="hero-title">
+            A product manager
+            <br />
+            who ships his own
+            <span className="l2">software.</span>
+          </h1>
+          <p className="hero__lead">
+            Eight years in NHS health tech and telecoms, most recently leading integration and AI
+            products at Consultant Connect. Outside work I design and ship my own software.
+          </p>
+          <div className="text-links">
+            <a className="tlink" href="#contact">
+              Let&apos;s talk
+            </a>
+            <a className="tlink" href="/DavidFlynnCoutts_Resume.pdf" download>
+              Download CV
+            </a>
           </div>
-          <motion.div
-            className="hero__photo"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, ease: EASE, delay: 0.12 }}
-          >
+        </div>
+        <aside className="hero__side" aria-label="Portrait">
+          <div className="portrait-frame">
             <Image
               src="/7819-0750.jpg"
               alt="David Flynn-Coutts"
-              width={300}
-              height={360}
-              quality={90}
-              style={{ objectFit: 'cover', objectPosition: 'center top', borderRadius: '28px' }}
+              width={360}
+              height={440}
               priority
             />
-            <div className="tag">
-              <MapPin size={14} strokeWidth={1.75} />
-              London · <b>builds &amp; ships</b>
-            </div>
-          </motion.div>
+          </div>
+          <p className="caption">
+            Senior Product Manager in London. Product, integrations, AI products and hands-on
+            software shipping.
+          </p>
+        </aside>
+      </section>
+
+      <section className="ledger" id="record" aria-labelledby="record-title">
+        <div className="ledger__head">
+          <span id="record-title">01 — The record</span>
+          <span>verified figures</span>
         </div>
-      </div>
-    </header>
+        {ledgerRows.map(row => (
+          <div className="ledger__row" key={row.what}>
+            <div className="ledger__what">
+              {row.what} <span className="ledger__context">— {row.context}</span>
+            </div>
+            <div className="ledger__value">{row.value}</div>
+          </div>
+        ))}
+      </section>
+    </>
   )
 }
