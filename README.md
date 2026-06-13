@@ -44,9 +44,10 @@ The contact form sends email through Resend. Local development and production ne
 
 ```bash
 RESEND_API_KEY=...
+CONTACT_TO_EMAIL=...
 ```
 
-The server action is in `app/actions/contact.ts`. It sends from `contact@flynncoutts.com` to `d.coutts@gmail.com` and uses the submitted email as `replyTo`.
+The server action is in `app/actions/contact.ts`. It sends from `contact@flynncoutts.com` to the private `CONTACT_TO_EMAIL` destination and uses the submitted email as `replyTo`.
 
 ## Content Map
 
