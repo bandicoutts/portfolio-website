@@ -1,114 +1,117 @@
-# Product Manager Portfolio
+# David Flynn-Coutts Portfolio
 
-A modern, minimalist portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features dark mode, smooth animations, and a blog.
+Personal portfolio site for [flynncoutts.com](https://flynncoutts.com), also available at [david.flynncoutts.com](https://david.flynncoutts.com).
 
-## Features
+The site is a single-page, editorial portfolio for Senior Product Manager roles. It leads with a sharp hero, quantified experience, two shipped projects, and a contact form.
 
-- 🎨 Minimalist, clean design
-- 🌓 Dark mode support with theme toggle
-- ✨ Smooth scroll animations with Framer Motion
-- 📱 Fully responsive
-- 📝 Blog functionality
-- 📧 Typeform contact integration
-- 🔗 Social media links (LinkedIn, GitHub)
+## Tech Stack
+
+- Next.js 15 App Router
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Resend for the contact form
+- Vercel Speed Insights
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js 18+ installed
-- npm or yarn
-
-### Installation
-
-1. Clone the repository
-2. Install dependencies:
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-3. Run the development server:
+Run the development server:
 
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) to view the site
+Open [http://localhost:3000](http://localhost:3000).
 
-## Customization
+## Scripts
 
-### Personal Information
-
-Update the following files with your information:
-
-- `components/hero.tsx` - Name, title, bio, and profile photo
-- `components/navigation.tsx` - GitHub and LinkedIn URLs
-- `components/experience.tsx` - Work experience details
-- `components/education.tsx` - Education history
-- `components/projects.tsx` - Project details and links
-- `components/footer.tsx` - Name in copyright
-
-### Profile Photo
-
-Replace `/public/placeholder-profile.jpg` with your photo (recommended: 400x400px)
-
-### Project Images
-
-Replace the placeholder images in `/public/`:
-- `placeholder-project-1.jpg`
-- `placeholder-project-2.jpg`
-- `placeholder-project-3.jpg`
-- `placeholder-project-4.jpg`
-
-Recommended size: 600x400px
-
-### Typeform Contact Form
-
-1. Create your form at [Typeform](https://www.typeform.com)
-2. Get your form's embed URL
-3. Update the `typeformUrl` in `components/contact.tsx`
-
-### Blog Posts
-
-Blog posts are currently hardcoded in `app/blog/[slug]/page.tsx`. To add new posts:
-
-1. Add a new entry to the `blogPosts` object in `app/blog/page.tsx`
-2. Add the post content to the `blogPosts` object in `app/blog/[slug]/page.tsx`
-
-For a more robust solution, consider using MDX or a CMS like Contentful or Sanity.
-
-## Tech Stack
-
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Dark Mode**: next-themes
-- **Icons**: Lucide React
-
-## Deploy on Vercel
-
-1. Push your code to GitHub
-2. Import your repository on [Vercel](https://vercel.com)
-3. Deploy!
-
-Vercel will automatically detect Next.js and configure the build settings.
-
-## Project Structure
-
+```bash
+npm run dev      # Start local development server
+npm run build    # Create production build
+npm run start    # Start production server after build
+npm run lint     # Run ESLint
 ```
-├── app/                  # Next.js app directory
-│   ├── blog/            # Blog pages
-│   ├── layout.tsx       # Root layout
-│   └── page.tsx         # Homepage
-├── components/          # React components
-│   ├── navigation.tsx
-│   ├── hero.tsx
-│   ├── experience.tsx
-│   ├── education.tsx
-│   ├── projects.tsx
-│   ├── contact.tsx
-│   └── footer.tsx
-└── public/              # Static assets
+
+## Environment
+
+The contact form sends email through Resend. Local development and production need:
+
+```bash
+RESEND_API_KEY=...
 ```
+
+The server action is in `app/actions/contact.ts`. It sends from `contact@flynncoutts.com` to `d.coutts@gmail.com` and uses the submitted email as `replyTo`.
+
+## Content Map
+
+Most homepage content is hardcoded in React components:
+
+- `components/hero.tsx` - hero headline, lead copy, portrait, outcome ledger
+- `components/experience.tsx` - work experience and metrics
+- `components/portfolio.tsx` - Stayright and Halve project copy, links, images
+- `components/contact.tsx` - contact section and form UI copy
+- `components/footer.tsx` - footer links and copyright
+- `components/navigation.tsx` - masthead and page index links
+
+Site metadata, canonical domain, Open Graph copy, and fonts live in `app/layout.tsx`.
+
+The sitemap and robots entries use `https://flynncoutts.com`:
+
+- `app/sitemap.ts`
+- `app/robots.ts`
+
+## Assets
+
+Static files live in `public/`.
+
+Current key assets:
+
+- `public/7819-0750.jpg` - portrait used in the hero
+- `public/stayright.png` - Stayright project screenshot
+- `public/parity.png` - Halve project screenshot
+- `public/DavidFlynnCoutts_Resume.pdf` - downloadable CV
+
+The portfolio component expects the project screenshots at `/stayright.png` and `/parity.png`.
+
+## Blog
+
+The blog route exists, but there are no public posts at the moment.
+
+Posts are defined in `data/blog-posts.ts`. When that array is empty:
+
+- `/blog` shows the empty state
+- individual posts are unavailable
+- blog URLs are omitted from the sitemap
+
+Add posts by adding `BlogPost` entries to `data/blog-posts.ts`.
+
+## Deployment
+
+The site is intended to deploy on Vercel from the GitHub repository:
+
+```text
+https://github.com/bandicoutts/portfolio-website
+```
+
+Before pushing meaningful changes, run:
+
+```bash
+npm run lint
+npm run build
+```
+
+Pushing to `main` updates the production deployment through the connected Vercel project.
+
+## Notes For Future Edits
+
+- The current design is light, editorial, and typography-led.
+- Keep copy direct, specific, and proof-led.
+- Use `Stayright` with a lowercase `r`.
+- The correct public domain is `flynncoutts.com`; `david.flynncoutts.com` is also valid.
+- Avoid reintroducing old template assumptions such as placeholder projects, Typeform, education blocks, or a dark-mode toggle unless the site actually adds them again.
