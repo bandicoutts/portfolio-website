@@ -2,21 +2,21 @@ import Image from 'next/image'
 
 const projects = [
   {
-    title: 'StayRight',
+    title: 'Stayright',
     meta: 'stayright.vercel.app · Live',
     description:
-      'Skilled Worker visa holders lose ILR eligibility if they spend more than 180 days outside the UK in any rolling 12 months. I had this problem myself, and the available tools were spreadsheets. StayRight tracks absences, flags compliance risk in real time and exports audit-ready reports.',
+      'Skilled Worker visa holders lose ILR eligibility if they spend more than 180 days outside the UK in any rolling 12 months. I had this problem myself, and the available tools were spreadsheets. Stayright tracks absences, flags compliance risk in real time and exports audit-ready reports.',
     href: 'https://stayright.vercel.app',
-    cta: 'Visit StayRight',
+    cta: 'Visit Stayright',
     image: '/stayright.png',
-    alt: 'StayRight absence and compliance dashboard',
-    caption: 'Fig. 1 — StayRight, absence and compliance dashboard.',
+    alt: 'Stayright absence and compliance dashboard',
+    caption: 'Fig. 1 — Stayright, absence and compliance dashboard.',
   },
   {
     title: 'Halve',
     meta: 'daily puzzle · Next.js · Supabase · Vercel',
     description:
-      'A daily deduction puzzle with one unique solution and no guessing. I built the engine first: generator, solver, uniqueness verifier, difficulty rating. Then I built the product around it: grid sizing, type scale, streaks, share cards and all the small decisions that make a puzzle feel fair.',
+      'Halve is a daily logic puzzle designed to feel obvious only after you solve it. Every board has one unique answer and no guessing. I built the generator, solver, uniqueness checks and difficulty rating, then shaped the product around the ritual: streaks, share cards, responsive grids and the small bits of feedback that make a solve feel earned.',
     href: 'https://parity-web-rpwn.vercel.app/',
     cta: 'Play Halve',
     image: '/parity.png',
