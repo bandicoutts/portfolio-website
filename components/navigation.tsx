@@ -29,17 +29,17 @@ export function Navigation() {
           David Flynn-Coutts
         </button>
         <span className="masthead__meta">
-          Senior Product Manager · London — <em>open to Senior PM roles &amp; select freelance</em>
+          Senior Product Manager · London, <em>open to Senior PM roles &amp; select freelance</em>
         </span>
       </header>
       <nav className="indexrow" aria-label="Primary navigation">
         {links.map(({ label, id, no }) => (
           <a key={id} href={`#${id}`}>
-            <span className="no">{no}</span> — {label}
+            <span className="no">{no}</span>: {label}
           </a>
         ))}
         <a href="/DavidFlynnCoutts_Resume.pdf" download>
-          <span className="no">PDF</span> — Download CV
+          <span className="no">PDF</span>: Download CV
         </a>
       </nav>
     </>
