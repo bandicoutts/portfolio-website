@@ -46,7 +46,7 @@ const roles = [
         into it with a data analyst and found a pricing bug on landline and broadband bundles. We
         corrected <span className="n">1,500</span> undercharged accounts and recovered{' '}
         <span className="n">NZ$700K</span> in three months, for NZ$12K of effort. A{' '}
-        <span className="n">58x</span> return on listening to lift chatter.
+        <span className="n">58x</span> return.
       </>,
       <>
         Also launched Business Wireless Broadband: <span className="n">1,000</span> live
@@ -58,13 +58,13 @@ const roles = [
   },
   {
     company: 'Skinny Mobile',
-    location: "Auckland, NZ · Vodafone's prepaid brand",
+    location: 'Auckland, NZ · a Spark venture',
     when: 'Jan 2018 to Dec 2019',
     title: 'Product & Propositions Manager',
     paragraphs: [
       <>
-        Propositions for Vodafone&apos;s prepaid brand, where volumes are high and margins are
-        thin, so every promotion had to pay for itself. Free Data Weekends lifted customer spend{' '}
+        Propositions for Skinny, a Spark venture, where volumes are high and margins are thin, so
+        every promotion had to pay for itself. Free Data Weekends lifted customer spend{' '}
         <span className="n">25%</span> and cut churn <span className="n">10%</span> year on year.
         I also rebuilt the self-service help site: page views up <span className="n">130%</span>,
         load times down <span className="n">60%</span>, and noticeably fewer customers needing a
