@@ -8,8 +8,11 @@ import { Footer } from '@/components/footer'
 export default function Home() {
   return (
     <div className="site-shell">
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
       <Navigation />
-      <main>
+      <main id="main-content">
         <Hero />
         <Experience />
         <Portfolio />

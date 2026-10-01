@@ -33,14 +33,14 @@ export function Hero() {
     <>
       <section className="hero" aria-label="Introduction">
         <div className="hero__main">
+          <h1>Senior Product Manager</h1>
           <p className="hero__lead">
-            Eight years as a PM across NHS health tech and telecoms: AI in clinically regulated
-            settings, the NHS integrations most vendors avoid, and products that kept patients out
-            of hospital. Outside work I build software for problems I run into myself.
+            I&apos;ve led regulated AI and clinical integration products across NHS primary and
+            secondary care, and built two consumer products independently.
           </p>
           <div className="text-links">
             <a className="tlink" href="#contact">
-              Let&apos;s talk
+              Contact
             </a>
             <a className="tlink" href="/DavidFlynnCoutts_Resume.pdf" download>
               Download CV
@@ -58,16 +58,16 @@ export function Hero() {
             />
           </div>
           <p className="caption">
-            Senior Product Manager in London. NHS integrations, regulated AI, and a habit of
-            shipping things myself.
+            Senior Product Manager. NHS integrations, regulated AI and products built from
+            first-hand problems.
           </p>
         </aside>
       </section>
 
       <section className="ledger" id="record" aria-labelledby="record-title">
         <div className="ledger__head">
-          <span id="record-title">01: The record</span>
-          <span>selected outcomes</span>
+          <h2 id="record-title">Selected outcomes</h2>
+          <span>Evidence over activity</span>
         </div>
         {ledgerRows.map(row => (
           <div className="ledger__row" key={row.what}>

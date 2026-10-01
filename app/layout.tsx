@@ -29,13 +29,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://flynncoutts.com"),
   title: "David Flynn-Coutts | Senior Product Manager",
   description:
-    "Senior Product Manager with eight years in NHS health tech and telecoms, most recently leading integrations and AI products at Consultant Connect.",
+    "Auckland-based Senior Product Manager with eight years in health tech and telecoms, including regulated AI and clinical integrations.",
   keywords: [
     "Product Manager",
     "Senior Product Manager",
     "Health Tech",
     "Telecommunications",
-    "London",
+    "Auckland",
+    "New Zealand",
     "David Flynn-Coutts",
   ],
   authors: [{ name: "David Flynn-Coutts" }],
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     url: "https://flynncoutts.com",
     title: "David Flynn-Coutts | Senior Product Manager",
     description:
-      "Senior Product Manager with eight years in NHS health tech and telecoms, most recently leading integrations and AI products at Consultant Connect.",
+      "Auckland-based Senior Product Manager with eight years in health tech and telecoms, including regulated AI and clinical integrations.",
     siteName: "David Flynn-Coutts Portfolio",
     images: [
       {
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "David Flynn-Coutts | Senior Product Manager",
     description:
-      "Senior Product Manager with eight years in NHS health tech and telecoms.",
+      "Auckland-based Senior Product Manager with eight years in health tech and telecoms.",
     images: ["/7819-0750.jpg"],
   },
   robots: {

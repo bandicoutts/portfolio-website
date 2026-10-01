@@ -109,12 +109,11 @@ export function Contact() {
     <section className="contact" id="contact" aria-labelledby="contact-title">
       <div className="contact__inner">
         <div className="contact__lead">
-          <span className="kick">04: Contact</span>
-          <h2 id="contact-title">Get in touch</h2>
+          <h2 id="contact-title">Contact</h2>
           <p>
-            I&apos;m open to Senior PM roles and occasional freelance work. If you&apos;re
-            building something in health tech, or anything where shipping the wrong thing is
-            expensive, I&apos;d like to hear about it.
+            I&apos;m open to Senior PM roles in Auckland and occasional freelance work. If
+            you&apos;re building something in health tech, or anything where shipping the wrong
+            thing is expensive, I&apos;d like to hear about it.
           </p>
           <div className="elsewhere">
             <div>

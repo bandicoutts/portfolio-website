@@ -1,10 +1,10 @@
 'use client'
 
 const links = [
-  { label: 'The record', id: 'record', no: '01' },
-  { label: 'Experience', id: 'experience', no: '02' },
-  { label: 'Projects', id: 'work', no: '03' },
-  { label: 'Contact', id: 'contact', no: '04' },
+  { label: 'Outcomes', id: 'record' },
+  { label: 'Experience', id: 'experience' },
+  { label: 'Projects', id: 'work' },
+  { label: 'Contact', id: 'contact' },
 ]
 
 function scrollTo(id: string) {
@@ -28,18 +28,16 @@ export function Navigation() {
         <button className="masthead__name" onClick={() => scrollTo('top')}>
           David Flynn-Coutts
         </button>
-        <span className="masthead__meta">
-          Senior Product Manager · London, <em>open to Senior PM roles &amp; select freelance</em>
-        </span>
+        <span className="masthead__meta">Auckland, New Zealand</span>
       </header>
       <nav className="indexrow" aria-label="Primary navigation">
-        {links.map(({ label, id, no }) => (
+        {links.map(({ label, id }) => (
           <a key={id} href={`#${id}`}>
-            <span className="no">{no}</span>: {label}
+            {label}
           </a>
         ))}
         <a href="/DavidFlynnCoutts_Resume.pdf" download>
-          <span className="no">PDF</span>: Download CV
+          Download CV <span aria-hidden="true">↗</span>
         </a>
       </nav>
     </>

@@ -5,7 +5,7 @@ export function Footer() {
         <div className="footer__col">
           David Flynn-Coutts
           <br />
-          Senior Product Manager · London
+          Senior Product Manager in Auckland
         </div>
         <div className="footer__col">
           <a href="https://flynncoutts.com">flynncoutts.com</a>

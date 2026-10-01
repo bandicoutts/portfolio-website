@@ -58,7 +58,7 @@ const roles = [
   },
   {
     company: 'Skinny Mobile',
-    location: 'Auckland, NZ · a Spark venture',
+    location: 'Auckland, NZ, a Spark venture',
     when: 'Jan 2018 to Dec 2019',
     title: 'Product & Propositions Manager',
     paragraphs: [
@@ -80,7 +80,7 @@ export function Experience() {
     <>
       <section className="block" id="experience" aria-labelledby="experience-title">
         <div className="section-head">
-          <span className="section-head__kick">02: 2016 to 2026</span>
+          <span className="section-head__kick">2016 to 2026</span>
           <h2 id="experience-title">Experience</h2>
         </div>
 
@@ -111,8 +111,8 @@ export function Experience() {
 
       <div className="earlier">
         <p>
-          Earlier: Spark New Zealand · technical escalations and software development · 2016 – 2018
-          · BSc Computer Science, University of Auckland
+          Earlier: Spark New Zealand, technical escalations and software development, 2016-2018.
+          BSc Computer Science, University of Auckland.
         </p>
       </div>
     </>
