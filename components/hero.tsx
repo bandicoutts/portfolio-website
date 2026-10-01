@@ -2,28 +2,28 @@ import Image from 'next/image'
 
 const ledgerRows = [
   {
-    what: 'Recovered from a billing bug I found at Vodafone NZ.',
-    context: "Three months' work at a cost of NZ$12K",
+    what: 'Revenue recovered after fixing a Vodafone NZ billing error',
+    context: "three months' work at a cost of NZ$12K",
     value: 'NZ$700,000',
   },
   {
-    what: 'NHS Scotland health boards using digital dermatology,',
-    context: 'nationwide rollout across Scotland',
+    what: 'Scottish health boards using the digital dermatology service',
+    context: 'a nationwide rollout',
     value: '14 / 14',
   },
   {
-    what: 'NPS among primary care users,',
-    context: 'over 18 months',
-    value: '+4 to +30',
+    what: 'Scottish contracts retained during the rollout',
+    context: 'followed by 20% revenue growth over two years',
+    value: '£2M',
   },
   {
-    what: 'Outcome capture on one NHS service',
-    context: 'the week Automated Outcomes switched on',
+    what: 'Clinical outcomes recorded on one NHS service',
+    context: 'after automated transcription and outcome detection launched',
     value: '4% to 97%',
   },
   {
-    what: 'Clinical documents routed daily into EMIS & SystmOne,',
-    context: 'at 96% acceptance, zero clinical data loss',
+    what: 'Clinical documents sent to EMIS and SystmOne each day',
+    context: 'with a 96% acceptance rate',
     value: '800+',
   },
 ]
@@ -33,11 +33,10 @@ export function Hero() {
     <>
       <section className="hero" aria-label="Introduction">
         <div className="hero__main">
-          <h1>Senior Product Manager</h1>
-          <p className="hero__lead">
-            I&apos;ve led regulated AI and clinical integration products across NHS primary and
-            secondary care, and built two consumer products independently.
-          </p>
+          <h1 className="hero__statement">
+            Eight years building digital products across telecoms and health technology, most
+            recently AI and clinical integrations for the NHS.
+          </h1>
           <div className="text-links">
             <a className="tlink" href="#contact">
               Contact
@@ -57,17 +56,13 @@ export function Hero() {
               priority
             />
           </div>
-          <p className="caption">
-            Senior Product Manager. NHS integrations, regulated AI and products built from
-            first-hand problems.
-          </p>
         </aside>
       </section>
 
       <section className="ledger" id="record" aria-labelledby="record-title">
         <div className="ledger__head">
           <h2 id="record-title">Selected outcomes</h2>
-          <span>Evidence over activity</span>
+          <span>From health technology and telecoms</span>
         </div>
         {ledgerRows.map(row => (
           <div className="ledger__row" key={row.what}>

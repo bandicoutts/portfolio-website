@@ -111,9 +111,8 @@ export function Contact() {
         <div className="contact__lead">
           <h2 id="contact-title">Contact</h2>
           <p>
-            I&apos;m open to Senior PM roles in Auckland and occasional freelance work. If
-            you&apos;re building something in health tech, or anything where shipping the wrong
-            thing is expensive, I&apos;d like to hear about it.
+            I&apos;m looking for senior product roles in Auckland, particularly in health
+            technology, telecommunications and B2B software. Email me or use the form.
           </p>
           <div className="elsewhere">
             <div>
