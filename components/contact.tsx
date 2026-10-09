@@ -112,7 +112,7 @@ export function Contact() {
           <h2 id="contact-title">Contact</h2>
           <p>
             I&apos;m looking for senior product roles in Auckland, particularly in health
-            technology, telecommunications and B2B software. Email me or use the form.
+            technology, telecommunications and B2B software.
           </p>
           <div className="elsewhere">
             <div>

@@ -1,5 +1,6 @@
 import { Navigation } from '@/components/navigation'
 import { Hero } from '@/components/hero'
+import { CaseNotes } from '@/components/case-notes'
 import { Experience } from '@/components/experience'
 import { Portfolio } from '@/components/portfolio'
 import { Contact } from '@/components/contact'
@@ -14,6 +15,7 @@ export default function Home() {
       <Navigation />
       <main id="main-content">
         <Hero />
+        <CaseNotes />
         <Experience />
         <Portfolio />
         <Contact />

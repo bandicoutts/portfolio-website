@@ -10,7 +10,6 @@ const projects = [
     cta: 'Visit Stayright',
     image: '/stayright.png',
     alt: 'Stayright absence and compliance dashboard',
-    caption: 'Stayright absence and compliance dashboard.',
   },
   {
     title: 'Halve',
@@ -21,7 +20,6 @@ const projects = [
     cta: 'Play Halve',
     image: '/parity.png',
     alt: 'Halve daily puzzle game',
-    caption: 'Halve, one solution per day.',
     flip: true,
   },
 ]
@@ -30,7 +28,6 @@ export function Portfolio() {
   return (
     <section className="block" id="work" aria-labelledby="projects-title">
       <div className="section-head">
-        <span className="section-head__kick">Designed, built and shipped solo</span>
         <h2 id="projects-title">Projects</h2>
       </div>
 
@@ -63,7 +60,6 @@ export function Portfolio() {
                   height={600}
                 />
               </div>
-              <div className="figcap">{project.caption}</div>
             </a>
           </article>
         ))}

@@ -14,8 +14,6 @@ export function Footer() {
         </div>
         <div className="footer__col">
           © {new Date().getFullYear()}
-          <br />
-          Designed and built by David Flynn-Coutts
         </div>
       </div>
     </footer>
