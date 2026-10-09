@@ -145,7 +145,7 @@ textarea:focus-visible {
   align-items: center;
   gap: clamp(32px, 7vw, 100px);
 }
-.hero__main { position: relative; padding-bottom: 10px; }
+.hero__main { position: relative; min-width: 0; padding-bottom: 10px; }
 .hero__byline { margin: 24px 0 0; font-size: 11px; font-weight: 600; line-height: 1.4; }
 .hero__byline small { color: var(--muted); font-size: 9px; font-weight: 400; }
 .hero__portrait { position: relative; margin: 0; }
@@ -639,7 +639,7 @@ textarea:focus-visible {
   .masthead { flex-wrap: wrap; gap: 13px 20px; padding-top: 14px; }
   .indexrow { gap: clamp(13px, 4vw, 25px); }
   .indexrow a { font-size: 9px; }
-  .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 58px; padding-bottom: 64px; }
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-top: 58px; padding-bottom: 64px; }
   .billing-feature { grid-template-columns: 1fr; gap: 16px; padding-top: 32px; }
   .billing-feature__heading { max-width: 560px; }
   .hero__main { max-width: 600px; }
@@ -690,10 +690,10 @@ textarea:focus-visible {
   .masthead__name { font-size: 11px; }
   .masthead__meta { font-size: 8px; }
   .indexrow { order: 2; width: 100%; justify-content: space-between; overflow-x: auto; }
-  .indexrow a { flex: 0 0 auto; }
-  .hero { grid-template-columns: 1fr; padding-top: 45px; }
+  .indexrow a { min-height: 44px; flex: 0 0 auto; align-items: center; }
+  .hero { grid-template-columns: minmax(0, 1fr); padding-top: 45px; }
   .hero__eyebrow { font-size: 8px; }
-  .hero__statement { font-size: clamp(51px, 13vw, 68px); }
+  .hero__statement { max-width: 100%; font-size: clamp(45px, 13vw, 68px); }
   .hero__intro { margin-top: 24px; font-size: 15px; }
   .hero__portrait { width: min(100%, 360px); margin: 8px 9px 0 0; }
   .hero__portrait img { width: min(290px, 100%); height: auto; aspect-ratio: 1; }
@@ -712,7 +712,6 @@ textarea:focus-visible {
   .billing-result span { font-size: 6px; }
   .billing-result small { font-size: 6px; }
   .case__copy h3 { font-size: 33px; }
-  .hero__statement { max-width: 13ch; }
   .clinical-art { min-height: 400px; gap: 15px; padding: 17px 0 39px; }
   .clinical-flow { grid-template-columns: minmax(0, 0.85fr) 14px minmax(0, 1fr) 14px minmax(0, 1fr) 14px minmax(0, 0.9fr); }
   .clinical-art__call,
@@ -761,12 +760,54 @@ textarea:focus-visible {
   .case--clinical .clinical-art { grid-column: 1; grid-row: 3; }
   .case--integration { grid-template-columns: 1fr; }
   .case--integration .case__copy { grid-column: 1; grid-row: 1; }
-  .case--integration .integration-results { grid-column: 1; grid-row: 2; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .case--integration .integration-results { grid-column: 1; grid-row: 2; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .case--integration .clinical-doc-art { grid-column: 1; grid-row: 3; }
   .case--scotland { grid-template-columns: 1fr; }
   .case--scotland .case__copy { grid-column: 1; grid-row: 1; }
   .case--scotland .scotland-results { grid-column: 1; grid-row: 2; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .case--scotland .scotland-art { grid-column: 1; grid-row: 3; }
+}
+
+@media (max-width: 480px) {
+  .bill-row--flagged { margin-right: -5px; margin-left: -5px; padding-right: 5px; padding-left: 5px; }
+  .clinical-art { min-height: 0; gap: 0; padding: 14px 0 22px; }
+  .clinical-flow {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr);
+    grid-template-rows: auto 24px auto;
+    gap: 8px 0;
+    align-items: center;
+  }
+  .clinical-art__call { grid-column: 1; grid-row: 1; }
+  .clinical-art__arrow:not(.clinical-art__arrow--second):not(.clinical-art__arrow--third) { grid-column: 2; grid-row: 1; }
+  .clinical-art__transcript { grid-column: 3; grid-row: 1; }
+  .clinical-art__arrow--second { grid-column: 3; grid-row: 2; transform: rotate(90deg); }
+  .clinical-art__ai { grid-column: 3; grid-row: 3; }
+  .clinical-art__arrow--third { grid-column: 2; grid-row: 3; transform: rotate(180deg); }
+  .clinical-art__record { grid-column: 1; grid-row: 3; }
+  .clinical-art__arrow { width: 26px; height: 20px; justify-self: center; }
+  .clinical-art__call,
+  .clinical-art__transcript,
+  .clinical-art__ai,
+  .clinical-art__record { transform: none; }
+  .clinical-art__call,
+  .clinical-art__record { padding: 12px 10px; }
+  .clinical-art__transcript,
+  .clinical-art__ai { padding: 12px 10px 14px; }
+  .clinical-doc-art { min-height: 270px; grid-template-columns: minmax(0, 1.15fr) 24px minmax(0, 0.85fr); gap: 8px; padding: 16px 0 28px; }
+  .clinical-doc-art__paper { min-height: 190px; }
+}
+
+@media (max-width: 360px) {
+  .hero__statement { font-size: clamp(40px, 13vw, 45px); }
+  .bill-row { grid-template-columns: minmax(0, 1.2fr) minmax(48px, 0.65fr) minmax(64px, 0.75fr); font-size: 6px; }
+  .bill-row--total strong:first-child { font-size: 7px; }
+  .role__body h3 { font-size: 21px; }
+}
+
+@media (max-width: 1100px) {
+  .billing-feature { grid-template-columns: minmax(0, 1fr); gap: 16px; padding-top: 32px; }
+  .billing-feature__heading { max-width: 560px; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
